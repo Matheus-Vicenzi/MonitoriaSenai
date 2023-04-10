@@ -1,0 +1,10 @@
+.main-logo {
+	width: 80%;
+}
+
+.main-logo-box {
+	margin: 5em auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

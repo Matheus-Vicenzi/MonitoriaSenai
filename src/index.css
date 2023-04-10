@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
+:root {
+	/* COLORS */
+	--main-color: #b2dbfe;
+	--secondary-color: #3c9df0;
+	--letter-light-blue: #abd7fd;
+	--icon-light-blue: #3c9df0;
+	--medium-blue: #3c9df0;
+	--link-color: #1f98ff;
+
+	/* FONTS */
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	background-color: var(--medium-blue);
+	color: var(--letter-light-blue);
+}
