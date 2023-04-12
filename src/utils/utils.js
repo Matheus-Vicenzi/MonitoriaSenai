@@ -1,1 +1,1 @@
-const urlLogo = /src/assets/imgs/logo-unisenai.png
+const urlLogo = "/src/assets/imgs/logo-unisenai.png";
