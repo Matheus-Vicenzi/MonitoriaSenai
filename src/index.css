@@ -1,25 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 
 :root {
-	/* COLORS */
-	--main-color: #b2dbfe;
-	--secondary-color: #0070ce;
-	--letter-light-blue: #abd7fd;
-	--icon-light-blue: #3c9df0;
-	--medium-blue: #3c9df0;
-	--link-color: #1f98ff;
+  /* COLORS */
+  --main-color: #b2dbfe;
+  --secondary-color: #0070ce;
+  --letter-light-blue: #abd7fd;
+  --icon-light-blue: #3c9df0;
+  --medium-blue: #3c9df0;
+  --link-color: #1f98ff;
+  --dark-blue: #005caa;
 
-	/* FONTS */
-	font-family: "Inter", sans-serif;
+  /* FONTS */
+  font-family: "Inter", sans-serif;
 }
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-	background-color: var(--medium-blue);
-	color: var(--letter-light-blue);
+  background-color: var(--medium-blue);
+  color: var(--letter-light-blue);
 }

@@ -1,0 +1,93 @@
+.login-box {
+  max-width: 70%;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem auto;
+  margin-top: 1%;
+  flex-direction: column;
+  min-height: 5%;
+}
+
+input {
+  border-color: var(--medium-blue);
+}
+
+.login-box h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-size: 20pt;
+  color: var(--medium-blue);
+  margin-bottom: 20px;
+}
+
+.esqueciSenha {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 12pt;
+  margin-top: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 12%;
+  align-self: flex-end;
+}
+
+.registre {
+  margin-top: 1rem;
+  color: var(--dark-blue);
+  font-size: 12pt;
+  text-align: center;
+  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+.login-box a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 12pt;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button-field {
+  font-size: 12pt;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  width: 10rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 15px;
+  background-color: var(--dark-blue);
+  border: none;
+  color: #abd7fd;
+}
+
+.field-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+svg {
+  color: var(--icon-light-blue);
+}
+
+.login-field label {
+  color: #fff;
+  font-size: 13pt;
+  font-family: "Asap", sans-serif;
+}
+
+.login-field input {
+  color: #fff !important;
+}
+
+.outline {
+  color: unset !important;
+  transition: all 100s ease-in-out !important;
+}
