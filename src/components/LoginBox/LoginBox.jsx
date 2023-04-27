@@ -4,6 +4,7 @@ import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import { Link } from "react-router-dom";
 import Inputs from "../Inputs/Inputs";
 import InputSenha from "../Inputs/InputSenha";
+import LockIcon from "@mui/icons-material/Lock";
 import LogoSenai from "../LogoSenai/LogoSenai";
 
 export default function LoginBox(props) {
@@ -26,7 +27,7 @@ export default function LoginBox(props) {
           style={{
             width: "100%",
           }}>
-          <InputSenha name="Senha" />
+          <InputSenha name="Senha" icon={<LockIcon />} />
           <a href="#" className="esqueciSenha">
             Esqueci minha senha
           </a>

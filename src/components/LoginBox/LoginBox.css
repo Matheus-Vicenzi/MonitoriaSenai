@@ -87,7 +87,7 @@ svg {
   color: #fff !important;
 }
 
-.outline {
-  color: unset !important;
-  transition: all 100s ease-in-out !important;
+.outline:hover {
+  /*background-color: white !important;
+  border-color: none !important;*/
 }

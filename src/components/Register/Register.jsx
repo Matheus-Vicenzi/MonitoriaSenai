@@ -9,6 +9,7 @@ import Input from "../Inputs/Inputs";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import InputSenha from "../Inputs/InputSenha";
 import LogoSenai from "../LogoSenai/LogoSenai";
+import LockIcon from "@mui/icons-material/Lock";
 import { Link } from "react-router-dom";
 import Inputs from "../Inputs/Inputs";
 
@@ -69,7 +70,7 @@ export default function Register() {
           style={{
             width: "100%",
           }}>
-          <InputSenha name="Sua Senha" />
+          <InputSenha name="Sua Senha" icon={<LockIcon />} />
         </div>
 
         <div
@@ -77,7 +78,7 @@ export default function Register() {
           style={{
             width: "100%",
           }}>
-          <InputSenha name="Confirme sua Senha" />
+          <InputSenha name="Confirme sua Senha" icon={<LockIcon />} />
         </div>
 
         <hr />

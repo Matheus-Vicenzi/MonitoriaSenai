@@ -25,25 +25,12 @@ export default function Inputs(props) {
         <InputLabel
           style={{
             color: "#ffff",
-            marginLeft: "2.5rem",
+            display: "flex",
           }}>
-          {props.name}
+          {props.icon} &nbsp; {props.name}
         </InputLabel>
-        <InputAdornment>
-          <IconButton
-            style={{
-              color: "#ffff",
-              marginLeft: "0.3rem",
-              marginTop: "3.3rem",
-            }}>
-            <IconButton>{props.icon}</IconButton>
-          </IconButton>
-        </InputAdornment>
-        <OutlinedInput
-          className="outline"
-          label="Login"
-          style={{ marginLeft: "2.8rem" }}
-        />
+
+        <OutlinedInput label="Login" style={{}} />
       </FormControl>
     </>
   );
