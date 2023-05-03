@@ -12,7 +12,7 @@ export default function LoginBox(props) {
     <>
       <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
       <div className="login-box">
-        <h1>Faça seu Login</h1>
+        <h1>Faça Login</h1>
 
         <div
           className="field-box"
@@ -28,9 +28,9 @@ export default function LoginBox(props) {
             width: "100%",
           }}>
           <InputSenha name="Senha" icon={<LockIcon />} />
-          <a href="#" className="esqueciSenha">
+          <Link to="/Recover" className="esqueciSenha">
             Esqueci minha senha
-          </a>
+          </Link>
         </div>
 
         <button className="button-field">ENTRAR</button>

@@ -81,8 +81,6 @@ export default function Register() {
           <InputSenha name="Confirme sua Senha" icon={<LockIcon />} />
         </div>
 
-        <hr />
-
         <button className="button-field">CADASTRAR</button>
 
         <p className="termos">

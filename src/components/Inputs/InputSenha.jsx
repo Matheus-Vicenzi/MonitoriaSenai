@@ -23,16 +23,18 @@ export default function InputSenha(props) {
     <>
       <FormControl
         className="login-field"
-        variant="outlined"
+        variant="filled"
         style={{
-          backgroundColor: "#0070CE",
-          borderRadius: "5px",
+          backgroundColor: "#e8e8eb",
+          borderRadius: "7px",
+          border: "2.5px solid #005caa",
           width: "80%",
         }}
         required={true}>
         <InputLabel
           style={{
-            color: "#ffff",
+            color: "#005caa",
+            marginTop: "-0.7%",
             display: "flex",
           }}>
           {props.icon} &nbsp; {props.name}

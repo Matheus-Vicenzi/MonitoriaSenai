@@ -15,22 +15,24 @@ export default function Inputs(props) {
     <>
       <FormControl
         className="login-field"
-        variant="outlined"
+        variant="filled"
         style={{
-          backgroundColor: "#0070CE",
-          borderRadius: "5px",
+          backgroundColor: "#e8e8eb",
+          border: "2.5px solid #005caa",
+          borderRadius: "7px",
           width: "80%",
         }}
         required={true}>
         <InputLabel
           style={{
-            color: "#ffff",
+            color: "#005caa",
             display: "flex",
+            alignItems: "center",
+            marginTop: "-0.7%",
           }}>
           {props.icon} &nbsp; {props.name}
         </InputLabel>
-
-        <OutlinedInput label="Login" style={{}} />
+        <OutlinedInput label="Login" />
       </FormControl>
     </>
   );

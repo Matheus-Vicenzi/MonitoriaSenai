@@ -2,7 +2,10 @@
 
 :root {
   /* COLORS */
+
   --main-color: #b2dbfe;
+  --white-color: #e8e8eb;
+  --letter-color: #005caa;
   --secondary-color: #0070ce;
   --letter-light-blue: #abd7fd;
   --icon-light-blue: #3c9df0;
@@ -21,6 +24,6 @@
 }
 
 html {
-  background-color: var(--medium-blue);
+  background-color: var(--white-color);
   color: var(--letter-light-blue);
 }

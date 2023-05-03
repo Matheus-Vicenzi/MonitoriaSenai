@@ -3,7 +3,7 @@
   min-height: 22rem;
   display: flex;
   align-items: center;
-  background-color: var(--main-color);
+
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem auto;
@@ -13,21 +13,21 @@
 }
 
 input {
-  border-color: var(--medium-blue);
+  border-color: var(--letter-color);
 }
 
 .login-box h1 {
   font-size: 1.5rem;
   font-weight: bolder;
   font-size: 20pt;
-  color: var(--medium-blue);
+  color: var(--letter-color);
   margin-bottom: 20px;
 }
 
 .esqueciSenha {
   text-decoration: none;
-  color: var(--dark-blue);
-  font-size: 12pt;
+  color: var(--letter-color);
+  font-size: 14pt;
   margin-top: 8px;
   text-decoration: underline;
   cursor: pointer;
@@ -37,16 +37,16 @@ input {
 
 .registre {
   margin-top: 1rem;
-  color: var(--dark-blue);
-  font-size: 12pt;
+  color: var(--letter-color);
+  font-size: 14pt;
   text-align: center;
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .login-box a {
   text-decoration: none;
-  color: var(--dark-blue);
-  font-size: 12pt;
+  color: var(--letter-color);
+  font-size: 14pt;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -60,9 +60,9 @@ input {
   font-family: "Inter", sans-serif;
   cursor: pointer;
   padding: 15px;
-  background-color: var(--dark-blue);
+  background-color: var(--letter-color);
   border: none;
-  color: #abd7fd;
+  color: var(--white-color);
 }
 
 .field-box {
@@ -74,17 +74,18 @@ input {
 }
 
 svg {
-  color: var(--icon-light-blue);
+  color: var(--letter-color);
+  font-size: 10pt;
 }
 
 .login-field label {
   color: #fff;
-  font-size: 13pt;
-  font-family: "Asap", sans-serif;
+  font-size: 11pt;
+  font-family: "Inter", sans-serif;
 }
 
 .login-field input {
-  color: #fff !important;
+  color: var(--letter-color);
 }
 
 .outline:hover {

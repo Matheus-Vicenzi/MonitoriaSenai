@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginBox from "./components/LoginBox/LoginBox";
 import Register from "./components/Register/Register";
+import Recover from "./components/Recover/Recover";
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
             element={
               <>
                 <Register />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/Recover"
+            element={
+              <>
+                <Recover />
               </>
             }
           />
