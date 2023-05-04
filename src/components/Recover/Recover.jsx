@@ -12,7 +12,7 @@ export default function Recover() {
 			</Link>
 
 			<LogoSenai
-				url="/src/front/assets/imgs/logo-unisenai.png"
+				url="/src/assets/imgs/logo-unisenai.png"
 				alt="Logo UniSenai"
 			/>
 

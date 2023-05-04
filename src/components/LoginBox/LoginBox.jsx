@@ -1,4 +1,4 @@
-import "/src/front/index.css";
+import "/src/index.css";
 import "./LoginBox.css";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ export default function LoginBox(props) {
 	return (
 		<>
 			<LogoSenai
-				url="/src/front/assets/imgs/logo-unisenai.png"
+				url="/src/assets/imgs/logo-unisenai.png"
 				alt="Logo UniSenai"
 			/>
 			<div className="login-box">
