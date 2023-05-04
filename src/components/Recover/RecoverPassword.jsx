@@ -2,10 +2,11 @@ import React from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Link } from "react-router-dom";
 import LogoSenai from "../LogoSenai/LogoSenai";
-import MailRoundedIcon from "@mui/icons-material/MailRounded";
-import Inputs from "../Inputs/Inputs";
+import InputSenha from "../Inputs/InputSenha";
+import LockIcon from "@mui/icons-material/Lock";
 import "./Recover.css";
-export default function Recover() {
+
+export default function RecoverPassword() {
   return (
     <>
       <Link to="/">
@@ -22,13 +23,17 @@ export default function Recover() {
           style={{
             width: "100%",
           }}>
-          <Inputs name="Seu E-mail" icon={<MailRoundedIcon />} />
-          <button className="button-fieldR">RECUPERAR</button>
-
-          <p className="registre">
-            <Link to="/RecoverPassword"> Pass</Link>
-          </p>
+          <InputSenha name="Sua Nova Senha" icon={<LockIcon />} />
         </div>
+
+        <div
+          className="field-box"
+          style={{
+            width: "100%",
+          }}>
+          <InputSenha name="Confirme sua Senha" icon={<LockIcon />} />
+        </div>
+        <button className="button-fieldR">RECUPERAR</button>
       </div>
     </>
   );

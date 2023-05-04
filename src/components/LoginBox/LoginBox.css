@@ -3,7 +3,6 @@
   min-height: 22rem;
   display: flex;
   align-items: center;
-
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem auto;
@@ -40,7 +39,7 @@ input {
   color: var(--letter-color);
   font-size: 14pt;
   text-align: center;
-  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .login-box a {
@@ -75,7 +74,6 @@ input {
 
 svg {
   color: var(--letter-color);
-  font-size: 10pt;
 }
 
 .login-field label {
@@ -86,9 +84,4 @@ svg {
 
 .login-field input {
   color: var(--letter-color);
-}
-
-.outline:hover {
-  /*background-color: white !important;
-  border-color: none !important;*/
 }

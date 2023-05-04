@@ -13,7 +13,6 @@ export default function LoginBox(props) {
       <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
       <div className="login-box">
         <h1>Faça Login</h1>
-
         <div
           className="field-box"
           style={{
@@ -21,7 +20,6 @@ export default function LoginBox(props) {
           }}>
           <Inputs name="Email" icon={<MailRoundedIcon />} />
         </div>
-
         <div
           className="field-box"
           style={{
@@ -32,8 +30,9 @@ export default function LoginBox(props) {
             Esqueci minha senha
           </Link>
         </div>
-
-        <button className="button-field">ENTRAR</button>
+        <Link to="/MenuPrincipal">
+          <button className="button-field">ENTRAR</button>
+        </Link>
 
         <p className="registre">
           Não tem uma conta?

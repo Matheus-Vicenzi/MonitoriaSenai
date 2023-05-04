@@ -42,13 +42,13 @@ export default function InputSenha(props) {
         <OutlinedInput
           className="outline"
           id="outlined-adornment-password"
-          type={showPassword ? "password" : "text"}
+          type={showPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment>
               <IconButton
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}>
-                {showPassword ? <VisibilityOff /> : <Visibility />}
+                {showPassword ? <Visibility /> : <VisibilityOff />}
               </IconButton>
             </InputAdornment>
           }

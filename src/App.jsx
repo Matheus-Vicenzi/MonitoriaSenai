@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginBox from "./components/LoginBox/LoginBox";
 import Register from "./components/Register/Register";
 import Recover from "./components/Recover/Recover";
+import RecoverPassword from "./components/Recover/RecoverPassword";
+import MenuPrincipal from "./components/MenuPrincipal/MenuPrincipal";
 
 function App() {
   return (
@@ -37,6 +39,24 @@ function App() {
             element={
               <>
                 <Recover />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/RecoverPassword"
+            element={
+              <>
+                <RecoverPassword />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/MenuPrincipal"
+            element={
+              <>
+                <MenuPrincipal />
               </>
             }
           />
