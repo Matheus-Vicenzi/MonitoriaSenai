@@ -5,7 +5,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import Input from "../Inputs/Inputs";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import InputSenha from "../Inputs/InputSenha";
 import LogoSenai from "../LogoSenai/LogoSenai";
@@ -21,7 +20,7 @@ export default function Register() {
 			</Link>
 
 			<LogoSenai
-				url="/src/front/assets/imgs/logo-unisenai.png"
+				url="/src/assets/imgs/logo-unisenai.png"
 				alt="Logo UniSenai"
 			/>
 

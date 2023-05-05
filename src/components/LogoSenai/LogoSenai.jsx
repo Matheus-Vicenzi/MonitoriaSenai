@@ -1,4 +1,4 @@
-import "/src/front/index.css";
+import "/src/index.css";
 import "./LogoSenai.css";
 
 export default function LogoSenai(props) {
