@@ -9,7 +9,7 @@ export default function MenuPrincipalInicio(props) {
         titulo="Seja Bem Vindo a Monitoria"
         logo={
           <LogoSenai
-            url="/src/front/assets/imgs/logo-unisenai.png"
+            url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"
           />
         }

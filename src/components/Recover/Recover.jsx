@@ -12,17 +12,7 @@ export default function Recover() {
         <ArrowBackIosIcon className="voltar" />
       </Link>
 
-<<<<<<< HEAD:src/front/components/Recover/Recover.jsx
-      <LogoSenai
-        url="/src/front/assets/imgs/logo-unisenai.png"
-        alt="Logo UniSenai"
-      />
-=======
-			<LogoSenai
-				url="/src/assets/imgs/logo-unisenai.png"
-				alt="Logo UniSenai"
-			/>
->>>>>>> d60dbaa0ce588a770ee9573ae87a4c2514d7bc58:src/components/Recover/Recover.jsx
+      <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
 
       <div className="login-box">
         <h1>Recuperar Senha</h1>
