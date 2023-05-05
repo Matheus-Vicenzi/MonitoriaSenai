@@ -1,16 +1,19 @@
-import "/src/index.css";
+import "../../index.css";
+import InputSenha from "../Inputs/InputSenha";
+import Inputs from "../Inputs/Inputs";
 import "./LoginBox.css";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import { Link } from "react-router-dom";
-import Inputs from "../Inputs/Inputs";
-import InputSenha from "../Inputs/InputSenha";
 import LockIcon from "@mui/icons-material/Lock";
 import LogoSenai from "../LogoSenai/LogoSenai";
 
 export default function LoginBox(props) {
   return (
     <>
-      <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
+      <LogoSenai
+        url="/src/front/assets/imgs/logo-unisenai.png"
+        alt="Logo UniSenai"
+      />
       <div className="login-box">
         <h1>Faça Login</h1>
         <div
@@ -30,7 +33,7 @@ export default function LoginBox(props) {
             Esqueci minha senha
           </Link>
         </div>
-        <Link to="/MenuPrincipal">
+        <Link to="/MenuStart">
           <button className="button-field">ENTRAR</button>
         </Link>
 

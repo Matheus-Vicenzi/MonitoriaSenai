@@ -1,12 +1,13 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
+import PersonIcon from "@mui/icons-material/Person";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -16,10 +17,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import LogoSenai from "../LogoSenai/LogoSenai";
-import "./MenuPrincipal.css";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import AddIcon from "@mui/icons-material/Add";
+import "./Menu.css";
 
 const drawerWidth = 240;
 
@@ -68,7 +70,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function MenuPrincipal() {
+export default function Menu(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -87,7 +89,6 @@ export default function MenuPrincipal() {
         <AppBar position="fixed" open={open}>
           <Toolbar>
             <IconButton
-              color="error"
               onClick={handleDrawerOpen}
               edge="start"
               sx={{ mr: 2, ...(open && { display: "none" }) }}>
@@ -120,10 +121,15 @@ export default function MenuPrincipal() {
           <List>
             {["Abrir Chamado", "Chamados", "Aluno", "Sair"].map(
               (text, index) => (
-                <ListItem key={text} disablePadding>
+                <ListItem key={text}>
                   <ListItemButton>
                     <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      <Link to="/">{index == 0 && <AddIcon />}</Link>
+                      <Link to="/ViewTickets">
+                        {index == 1 && <HeadsetMicIcon />}
+                      </Link>
+                      <Link to="/">{index == 2 && <PersonIcon />}</Link>
+                      <Link to="/">{index == 3 && <ExitToAppIcon />}</Link>
                     </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItemButton>
@@ -134,14 +140,8 @@ export default function MenuPrincipal() {
         </Drawer>
         <Main open={open} className="menu">
           <DrawerHeader />
-          <h1>
-            Seja Bem-Vindo <br /> a Monitoria
-          </h1>
-          <LogoSenai
-            className="logo"
-            url="/src/assets/imgs/logo-unisenai.png"
-            alt="Logo UniSenai"
-          />
+          <h1>{props.titulo}</h1>
+          <div className="logoMenuPrincipal">{props.logo}</div>
         </Main>
       </Box>
     </>

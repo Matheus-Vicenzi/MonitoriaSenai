@@ -1,14 +1,6 @@
 version: "3"
 
 services:
-<<<<<<< HEAD
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/home/node/app
-=======
     app:
         container_name: monitoria-app
         build: .
@@ -16,4 +8,3 @@ services:
             - "3000:3000"
         volumes:
             - .:/home/node/app
->>>>>>> 756a664171273db4c12072bbf80f7f42602e0927

@@ -13,7 +13,10 @@ export default function RecoverPassword() {
         <ArrowBackIosIcon className="voltar" />
       </Link>
 
-      <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
+      <LogoSenai
+        url="/src/front/assets/imgs/logo-unisenai.png"
+        alt="Logo UniSenai"
+      />
 
       <div className="login-box">
         <h1>Recuperar Senha</h1>

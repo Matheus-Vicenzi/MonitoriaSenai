@@ -39,7 +39,6 @@ input {
   color: var(--letter-color);
   font-size: 14pt;
   text-align: center;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .login-box a {

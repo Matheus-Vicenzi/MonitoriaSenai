@@ -7,7 +7,8 @@ import LoginBox from "./components/LoginBox/LoginBox";
 import Register from "./components/Register/Register";
 import Recover from "./components/Recover/Recover";
 import RecoverPassword from "./components/Recover/RecoverPassword";
-import MenuPrincipal from "./components/MenuPrincipal/MenuPrincipal";
+import MenuStart from "./components/Menu/MenuStart";
+import ViewTickets from "./components/ViewTickets/ViewTickets";
 
 function App() {
   return (
@@ -53,10 +54,19 @@ function App() {
           />
           <Route
             exact
-            path="/MenuPrincipal"
+            path="/MenuStart"
             element={
               <>
-                <MenuPrincipal />
+                <MenuStart />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/ViewTickets"
+            element={
+              <>
+                <ViewTickets />
               </>
             }
           />

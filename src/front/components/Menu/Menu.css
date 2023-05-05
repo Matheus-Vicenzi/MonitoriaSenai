@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionFixed.mui-fixed.css-ciy9n4-MuiPaper-root-MuiAppBar-root {
+  background-color: var(--white-color);
+  box-shadow: none;
+}
+
+header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionFixed.mui-fixed.css-jzk4qw-MuiPaper-root-MuiAppBar-root {
+  background-color: var(--white-color);
+  box-shadow: none;
+}
+
+.menu h1 {
+  color: var(--letter-color);
+  text-align: center;
+  padding: 2%;
+}
+
+.logoMenuPrincipal {
+  margin-top: -3%;
+}
+
+.menuInicio {
+  margin-top: 10%;
+}
