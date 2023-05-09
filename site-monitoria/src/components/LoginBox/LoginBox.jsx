@@ -30,7 +30,7 @@ export default function LoginBox(props) {
             Esqueci minha senha
           </Link>
         </div>
-        <Link to="/MenuStudent">
+        <Link to="/MenuStart">
           <button className="button-field">ENTRAR</button>
         </Link>
         <Link to="/MenuMentor">

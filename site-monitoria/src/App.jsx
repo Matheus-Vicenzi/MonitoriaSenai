@@ -5,7 +5,7 @@ import LoginBox from "./components/LoginBox/LoginBox";
 import Register from "./components/Register/Register";
 import Recover from "./components/Recover/Recover";
 import RecoverPassword from "./components/Recover/RecoverPassword";
-import MenuStudent from "./components/Menu/MenuStudent";
+import MenuStart from "./components/Menu/MenuStart";
 import MenuMentor from "./components/Menu/MenuMentor";
 import ViewTickets from "./components/ViewTickets/ViewTickets";
 import RegisterCourseDiscipline from "./components/Register/RegisterCourseDiscipline";
@@ -45,10 +45,10 @@ function App() {
           />
           <Route
             exact
-            path="/MenuStudent"
+            path="/MenuStart"
             element={
               <>
-                <MenuStudent />
+                <MenuStart />
               </>
             }
           />
@@ -85,15 +85,6 @@ function App() {
             element={
               <>
                 <ViewTickets />
-              </>
-            }
-          />
-          <Route
-            exact
-            path="/RecoverPassword"
-            element={
-              <>
-                <RecoverPassword />
               </>
             }
           />

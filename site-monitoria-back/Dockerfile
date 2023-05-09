@@ -2,7 +2,7 @@ FROM node:18.5.0
 
 WORKDIR /home/node/app
 
-EXPOSE 3000
+EXPOSE 8080
 
 USER node
 

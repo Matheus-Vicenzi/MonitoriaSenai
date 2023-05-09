@@ -11,16 +11,18 @@ import PersonIcon from "@mui/icons-material/Person";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function MenuStudent(props) {
+export default function MenuMentor(props) {
   return (
     <div>
       <Menu
-        lista={["Abrir Chamado", "Chamados", "Aluno", "Sair"].map(
+        lista={["Curso/Disciplina", "Agenda", "Chamados", "Sair"].map(
           (text, index) => (
             <ListItem key={text}>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/">{index == 0 && <AddIcon />}</Link>
+                  <Link to="/RegisterCourseDiscipline">
+                    {index == 0 && <AddIcon />}
+                  </Link>
                   <Link to="/ViewTickets">
                     {index == 1 && <HeadsetMicIcon />}
                   </Link>

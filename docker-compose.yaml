@@ -15,12 +15,13 @@ services:
             - ./data:/var/lib/mysql
 
     app:
+        command: npm run dev
         restart: always
         container_name: monitoria-app
-        build: .
+        build: ./site-monitoria
         ports:
             - "3000:3000"
         volumes:
-            - .:/home/node/app
+            - ./site-monitoria:/home/node/app
         depends_on:
             - db
