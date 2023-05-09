@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginBox from "./components/LoginBox/LoginBox";
 import Register from "./components/Register/Register";
 import Recover from "./components/Recover/Recover";
-import MenuStart from "./components/Menu/MenuStart";
+import RecoverPassword from "./components/Recover/RecoverPassword";
+import MenuStudent from "./components/Menu/MenuStudent";
 import ViewTickets from "./components/ViewTickets/ViewTickets";
 
 function App() {
@@ -42,10 +43,10 @@ function App() {
           />
           <Route
             exact
-            path="/MenuStart"
+            path="/MenuStudent"
             element={
               <>
-                <MenuStart />
+                <MenuStudent />
               </>
             }
           />
@@ -64,6 +65,15 @@ function App() {
             element={
               <>
                 <ViewTickets />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/RecoverPassword"
+            element={
+              <>
+                <RecoverPassword />
               </>
             }
           />

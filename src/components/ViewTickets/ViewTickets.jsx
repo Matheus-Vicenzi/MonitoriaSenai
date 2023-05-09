@@ -13,38 +13,43 @@ export default function VisualizarChamados(props) {
   return (
     <>
       <div className="VisualizarChamados">
-        <MenuPrincipal titulo="Chamados" />
+        <MenuPrincipal
+          titulo="Chamados"
+          conteudo={
+            <TableContainer
+              component={Paper}
+              style={{ backgroundColor: "#E7EFF7" }}>
+              <Table sx={{ minWidth: 100 }} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="center">
+                      <h3>Data de Abertura</h3>
+                    </TableCell>
+                    <TableCell align="center">
+                      <h3>Nome do Monitor</h3>
+                    </TableCell>
+                    <TableCell align="center">
+                      <h3>Assunto</h3>
+                    </TableCell>
+                    <TableCell align="center">
+                      <h3>Status</h3>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                    <TableCell align="center">sdsd</TableCell>
+                    <TableCell align="center">sdsd</TableCell>
+                    <TableCell align="center">sdsdsd</TableCell>
+                    <TableCell align="center">sdsdsdsd</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+          }
+        />
       </div>
-
-      <TableContainer component={Paper} style={{ backgroundColor: "#E7EFF7" }}>
-        <Table sx={{ minWidth: 100 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">
-                <h3>Data de Abertura</h3>
-              </TableCell>
-              <TableCell align="center">
-                <h3>Nome do Monitor</h3>
-              </TableCell>
-              <TableCell align="center">
-                <h3>Assunto</h3>
-              </TableCell>
-              <TableCell align="center">
-                <h3>Status</h3>
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-              <TableCell align="center">sdsd</TableCell>
-              <TableCell align="center">sdsd</TableCell>
-              <TableCell align="center">sdsdsd</TableCell>
-              <TableCell align="center">sdsdsdsd</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
     </>
   );
 }
