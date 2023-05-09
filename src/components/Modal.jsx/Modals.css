@@ -1,0 +1,13 @@
+.botoesModal {
+  font-size: 12pt;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  width: 13rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 12px;
+  background-color: var(--letter-color);
+  border: none;
+  color: var(--white-color);
+}

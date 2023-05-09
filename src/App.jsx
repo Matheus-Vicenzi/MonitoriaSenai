@@ -6,7 +6,9 @@ import Register from "./components/Register/Register";
 import Recover from "./components/Recover/Recover";
 import RecoverPassword from "./components/Recover/RecoverPassword";
 import MenuStudent from "./components/Menu/MenuStudent";
+import MenuMentor from "./components/Menu/MenuMentor";
 import ViewTickets from "./components/ViewTickets/ViewTickets";
+import RegisterCourseDiscipline from "./components/Register/RegisterCourseDiscipline";
 
 function App() {
   return (
@@ -47,6 +49,24 @@ function App() {
             element={
               <>
                 <MenuStudent />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/MenuMentor"
+            element={
+              <>
+                <MenuMentor />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/RegisterCourseDiscipline"
+            element={
+              <>
+                <RegisterCourseDiscipline />
               </>
             }
           />

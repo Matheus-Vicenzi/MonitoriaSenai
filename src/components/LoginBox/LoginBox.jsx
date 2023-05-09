@@ -33,6 +33,9 @@ export default function LoginBox(props) {
         <Link to="/MenuStudent">
           <button className="button-field">ENTRAR</button>
         </Link>
+        <Link to="/MenuMentor">
+          <button className="button-field">ENTRAR</button>
+        </Link>
 
         <p className="registre">
           Não tem uma conta?

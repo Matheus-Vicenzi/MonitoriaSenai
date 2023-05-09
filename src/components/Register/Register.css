@@ -11,3 +11,8 @@
   color: var(--letter-color);
   margin: 1% 0 0 2%;
 }
+
+.registerCourse {
+  display: flex;
+  flex-direction: column;
+}

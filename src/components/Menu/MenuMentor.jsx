@@ -15,26 +15,25 @@ export default function MenuMentor(props) {
   return (
     <div>
       <Menu
-        lista={[
-          "Cadastrar Curso e Disciplina",
-          "Agenda",
-          "Chamados",
-          "Sair",
-        ].map((text, index) => (
-          <ListItem key={text}>
-            <ListItemButton>
-              <ListItemIcon>
-                <Link to="/">{index == 0 && <AddIcon />}</Link>
-                <Link to="/ViewTickets">
-                  {index == 1 && <HeadsetMicIcon />}
-                </Link>
-                <Link to="/">{index == 2 && <PersonIcon />}</Link>
-                <Link to="/">{index == 3 && <ExitToAppIcon />}</Link>
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        lista={["Curso/Disciplina", "Agenda", "Chamados", "Sair"].map(
+          (text, index) => (
+            <ListItem key={text}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Link to="/RegisterCourseDiscipline">
+                    {index == 0 && <AddIcon />}
+                  </Link>
+                  <Link to="/ViewTickets">
+                    {index == 1 && <HeadsetMicIcon />}
+                  </Link>
+                  <Link to="/">{index == 2 && <PersonIcon />}</Link>
+                  <Link to="/">{index == 3 && <ExitToAppIcon />}</Link>
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          )
+        )}
         titulo="Seja Bem Vindo a Monitoria"
         logo={
           <LogoSenai
