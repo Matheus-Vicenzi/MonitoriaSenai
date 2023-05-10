@@ -34,12 +34,8 @@ export default function RegisterCourseDiscipline() {
               </IconButton>
             </TableCell>
             <TableCell component="th" scope="row">
-              asasasasas
+              Curso
             </TableCell>
-            <TableCell align="right">asasas</TableCell>
-            <TableCell align="right">asasas</TableCell>
-            <TableCell align="right">asasas</TableCell>
-            <TableCell align="right">asaasas</TableCell>
           </TableRow>
           <TableRow>
             <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
