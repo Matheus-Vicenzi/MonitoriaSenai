@@ -7,8 +7,11 @@ import Recover from "./components/Recover/Recover";
 import RecoverPassword from "./components/Recover/RecoverPassword";
 import MenuStudent from "./components/Menu/MenuStudent";
 import MenuMentor from "./components/Menu/MenuMentor";
-import ViewTickets from "./components/ViewTickets/ViewTickets";
+import ViewTicketsMentor from "./components/ViewTickets/ViewTicketsMentor";
+import ViewTicketsStudent from "./components/ViewTickets/ViewTicketsStudent";
 import RegisterCourseDiscipline from "./components/Register/RegisterCourseDiscipline";
+import OpenTickets from "./components/OpenTickets/OpenTickets";
+import ScheduleMentor from "./components/Schedule/ScheduleMentor";
 
 function App() {
   return (
@@ -45,10 +48,37 @@ function App() {
           />
           <Route
             exact
+            path="/RecoverPassword"
+            element={
+              <>
+                <RecoverPassword />
+              </>
+            }
+          />
+          <Route
+            exact
             path="/MenuStudent"
             element={
               <>
                 <MenuStudent />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/OpenTickets"
+            element={
+              <>
+                <OpenTickets />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/ViewTicketsStudent"
+            element={
+              <>
+                <ViewTicketsStudent />
               </>
             }
           />
@@ -72,19 +102,10 @@ function App() {
           />
           <Route
             exact
-            path="/Recover"
+            path="/ViewTicketsMentor"
             element={
               <>
-                <Recover />
-              </>
-            }
-          />
-          <Route
-            exact
-            path="/ViewTickets"
-            element={
-              <>
-                <ViewTickets />
+                <ViewTicketsMentor />
               </>
             }
           />

@@ -113,9 +113,10 @@ export default function Menu(props) {
         </Drawer>
         <Main open={open} className="menu">
           <DrawerHeader />
+          <div className="logoMenuPrincipal">{props.imagem}</div>
+          <div className="logoTelas">{props.logo}</div>
           <h1>{props.titulo}</h1>
-          <div className="logoMenuPrincipal">{props.logo}</div>
-          {props.conteudo}
+          <div className="conteudo">{props.conteudo}</div>
         </Main>
       </Box>
     </>

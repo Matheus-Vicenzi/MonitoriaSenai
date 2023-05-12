@@ -10,7 +10,7 @@ export default function MenuMentor(props) {
       <Menu
         lista={<ListaMenuMentor />}
         titulo="Seja Bem Vindo a Monitoria"
-        logo={
+        imagem={
           <LogoSenai
             url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"

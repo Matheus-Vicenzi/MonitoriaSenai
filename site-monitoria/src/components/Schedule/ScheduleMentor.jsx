@@ -1,17 +1,14 @@
 import React from "react";
-import Menu from "./Menu";
-
+import ListaMenuMentor from "../Menu/ListaMenuMentor";
 import LogoSenai from "../LogoSenai/LogoSenai";
+import Menu from "../Menu/Menu";
 
-import ListaMenuStudent from "./ListaMenuStudent";
-
-export default function MenuStudent(props) {
+export default function ScheduleMentor() {
   return (
     <div>
       <Menu
-        lista={<ListaMenuStudent />}
-        titulo="Seja Bem Vindo a Monitoria"
-        imagem={
+        lista={<ListaMenuMentor />}
+        logo={
           <LogoSenai
             url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"
