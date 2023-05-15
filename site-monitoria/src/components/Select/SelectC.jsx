@@ -16,7 +16,7 @@ export default function SelectC(props) {
             backgroundColor: "#e8e8eb",
             border: "2.5px solid #005caa",
             borderRadius: "7px",
-            width: "80%",
+            width: "30rem",
             marginBottom: "10px",
           }}
           required={true}>

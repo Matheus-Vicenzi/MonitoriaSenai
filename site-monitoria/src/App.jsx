@@ -11,8 +11,6 @@ import ViewTicketsMentor from "./components/ViewTickets/ViewTicketsMentor";
 import ViewTicketsStudent from "./components/ViewTickets/ViewTicketsStudent";
 import RegisterCourseDiscipline from "./components/Register/RegisterCourseDiscipline";
 import OpenTickets from "./components/OpenTickets/OpenTickets";
-import ScheduleMentor from "./components/Schedule/ScheduleMentor";
-
 function App() {
   return (
     <>

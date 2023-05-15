@@ -1,11 +1,26 @@
 import React from "react";
+import "./OpenTickets.css";
 import ListaMenuStudent from "../Menu/ListaMenuStudent";
+import { useState } from "react";
 import LogoSenai from "../LogoSenai/LogoSenai";
-import Menu from "../Menu/Menu";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import PersonIcon from "@mui/icons-material/Person";
+import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import ArticleIcon from "@mui/icons-material/Article";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import SelectC from "../Select/SelectC";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
-export default function OpenTickets() {
+import Menu from "../Menu/Menu";
+import { Input } from "@mui/material";
+import InputsLittle from "../Inputs/InputsLittle";
+
+export default function OpenTickets(props) {
+  const [value, setValue] = useState();
   return (
-    <div>
+    <div className="">
       <Menu
         lista={<ListaMenuStudent />}
         logo={
@@ -13,6 +28,30 @@ export default function OpenTickets() {
             url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"
           />
+        }
+        titulo="Abertura de Monitoria"
+        conteudo={
+          <>
+            <InputsLittle
+              name="Assunto da Monitoria"
+              icon={<ArticleIcon />}
+              className="openTicket"
+            />
+            <SelectC icon={<AutoStoriesIcon />} name="Disciplina" />
+            <SelectC icon={<PersonIcon />} name="Monitor" />
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["DateCalendar", "DateCalendar"]}>
+                <DemoItem label="">
+                  <DateCalendar
+                    value={value}
+                    onChange={(newValue) => setValue(newValue)}
+                  />
+                </DemoItem>
+              </DemoContainer>
+            </LocalizationProvider>
+            <SelectC icon={<AccessTimeIcon />} name="Horário" />
+            <button className="button-field">Agendar</button>
+          </>
         }
       />
     </div>

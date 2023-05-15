@@ -25,6 +25,13 @@ header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAp
   margin-top: -3%;
 }
 
+.conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .logoTelas {
   width: 30%;
   margin-left: 67%;

@@ -19,9 +19,7 @@ export default function ListaMenuMentor() {
               <Link to="/RegisterCourseDiscipline">
                 {index == 0 && <AddIcon />}
               </Link>
-              <Link to="/ScheduleMentor">
-                {index == 1 && <HeadsetMicIcon />}
-              </Link>
+              <Link to="/">{index == 1 && <HeadsetMicIcon />}</Link>
               <Link to="/ViewTicketsMentor">
                 {index == 2 && <PersonIcon />}
               </Link>
