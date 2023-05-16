@@ -13,8 +13,7 @@ export default function Inputs(props) {
           backgroundColor: "#e8e8eb",
           border: "2.5px solid #005caa",
           borderRadius: "7px",
-          width: "60%",
-          margin: "10px",
+          width: "80%",
         }}
         required={true}>
         <InputLabel

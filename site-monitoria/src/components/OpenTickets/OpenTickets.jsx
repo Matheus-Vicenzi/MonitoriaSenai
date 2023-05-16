@@ -10,7 +10,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ArticleIcon from "@mui/icons-material/Article";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import SelectC from "../Select/SelectC";
+import SelectMaior from "../Select/SelectMaior";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 import Menu from "../Menu/Menu";
@@ -37,8 +37,8 @@ export default function OpenTickets(props) {
               icon={<ArticleIcon />}
               className="openTicket"
             />
-            <SelectC icon={<AutoStoriesIcon />} name="Disciplina" />
-            <SelectC icon={<PersonIcon />} name="Monitor" />
+            <SelectMaior icon={<AutoStoriesIcon />} name="Disciplina" />
+            <SelectMaior icon={<PersonIcon />} name="Monitor" />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DateCalendar", "DateCalendar"]}>
                 <DemoItem label="">
@@ -49,7 +49,7 @@ export default function OpenTickets(props) {
                 </DemoItem>
               </DemoContainer>
             </LocalizationProvider>
-            <SelectC icon={<AccessTimeIcon />} name="Horário" />
+            <SelectMaior icon={<AccessTimeIcon />} name="Horário" />
             <button className="button-field">Agendar</button>
           </>
         }

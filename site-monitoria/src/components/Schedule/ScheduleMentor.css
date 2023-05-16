@@ -1,0 +1,8 @@
+.button-Schedule {
+  border: none;
+  background-color: var(--confirm-schedule);
+  font-size: "Inter, sans-serif";
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}

@@ -1,12 +1,13 @@
 import React from "react";
 import "./Modals.css";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import { Modal } from "@mui/material";
 
 export default function Modals(props) {
   const handleClose = () => setOpen(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   return (
     <>

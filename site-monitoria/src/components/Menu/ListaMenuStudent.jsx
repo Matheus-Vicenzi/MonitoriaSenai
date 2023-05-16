@@ -20,7 +20,7 @@ export default function ListaMenuStudent() {
               <Link to="/ViewTicketsStudent">
                 {index == 1 && <HeadsetMicIcon />}
               </Link>
-              <Link to="/">{index == 2 && <PersonIcon />}</Link>
+              <Link to="/Student">{index == 2 && <PersonIcon />}</Link>
               <Link to="/">{index == 3 && <ExitToAppIcon />}</Link>
             </ListItemIcon>
             <ListItemText primary={text} />

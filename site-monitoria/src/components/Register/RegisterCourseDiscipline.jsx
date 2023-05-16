@@ -14,7 +14,7 @@ import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import TableRow from "@mui/material/TableRow";
 import Inputs from "../Inputs/Inputs";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
-import Select from "../Select/SelectC";
+import SelectC from "../Select/SelectC";
 import Menu from "../Menu/Menu";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
 
@@ -46,7 +46,7 @@ export default function RegisterCourseDiscipline() {
                 <Modals
                   button="Adicionar Disciplina"
                   titulo="Cadastro de Disciplina"
-                  select={<Select icon={<MenuBookIcon />} name="Curso" />}
+                  select={<SelectC icon={<MenuBookIcon />} name="Curso" />}
                   input={
                     <Inputs
                       name="Nome da Disciplina"

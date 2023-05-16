@@ -1,6 +1,4 @@
 import React from "react";
-import "./ScheduleMentor.css";
-import Menu from "../Menu/Menu";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,10 +6,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import "./UserManagement.css";
 import LogoSenai from "../LogoSenai/LogoSenai";
+import Menu from "../Menu/Menu";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
+import SelectC from "../Select/SelectC";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
-export default function ScheduleMentor() {
+export default function UserManagement() {
   return (
     <div className="VisualizarChamados">
       <Menu
@@ -31,16 +33,13 @@ export default function ScheduleMentor() {
               <TableHead>
                 <TableRow>
                   <TableCell align="center">
-                    <h3>Nome Aluno</h3>
+                    <h3>Nome Completo</h3>
                   </TableCell>
                   <TableCell align="center">
-                    <h3>Assunto da Monitoria</h3>
+                    <h3>Email</h3>
                   </TableCell>
                   <TableCell align="center">
-                    <h3>Data e hora</h3>
-                  </TableCell>
-                  <TableCell align="center">
-                    <h3>Ação</h3>
+                    <h3>Perfil</h3>
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -51,11 +50,8 @@ export default function ScheduleMentor() {
                   }}>
                   <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center">sdsd</TableCell>
-                  <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center" className="tablePerfil">
-                    <button className="button-Schedule">
-                      Concluir Monitoria
-                    </button>
+                    <SelectC icon={<ManageAccountsIcon />} name="Perfil" />
                   </TableCell>
                 </TableRow>
               </TableBody>

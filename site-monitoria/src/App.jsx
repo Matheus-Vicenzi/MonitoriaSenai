@@ -11,6 +11,9 @@ import ViewTicketsMentor from "./components/ViewTickets/ViewTicketsMentor";
 import ViewTicketsStudent from "./components/ViewTickets/ViewTicketsStudent";
 import RegisterCourseDiscipline from "./components/Register/RegisterCourseDiscipline";
 import OpenTickets from "./components/OpenTickets/OpenTickets";
+import UserManagement from "./components/UserManagement/UserManagement";
+import ScheduleMentor from "./components/Schedule/ScheduleMentor";
+import Student from "./components/Student/Student";
 function App() {
   return (
     <>
@@ -82,6 +85,15 @@ function App() {
           />
           <Route
             exact
+            path="/Student"
+            element={
+              <>
+                <Student />
+              </>
+            }
+          />
+          <Route
+            exact
             path="/MenuMentor"
             element={
               <>
@@ -104,6 +116,24 @@ function App() {
             element={
               <>
                 <ViewTicketsMentor />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/ScheduleMentor"
+            element={
+              <>
+                <ScheduleMentor />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/UserManagement"
+            element={
+              <>
+                <UserManagement />
               </>
             }
           />
