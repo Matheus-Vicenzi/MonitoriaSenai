@@ -100,6 +100,7 @@ export default function Menu(props) {
           anchor="left"
           open={open}>
           <DrawerHeader>
+            <h4>Olá, Pessoa!</h4>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
                 <ChevronLeftIcon />
@@ -113,8 +114,7 @@ export default function Menu(props) {
         </Drawer>
         <Main open={open} className="menu">
           <DrawerHeader />
-          <div className="logoMenuPrincipal">{props.imagem}</div>
-          <div className="logoTelas">{props.logo}</div>
+          {props.logo}
           <h1>{props.titulo}</h1>
           <div className="conteudo">{props.conteudo}</div>
         </Main>

@@ -3,7 +3,10 @@ import "./Modals.css";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Modal } from "@mui/material";
+import FormControl from "@mui/material/FormControl";
+import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
 
 export default function Modals(props) {
   const handleClose = () => setOpen(false);
@@ -11,10 +14,7 @@ export default function Modals(props) {
   const handleOpen = () => setOpen(true);
   return (
     <>
-      <button onClick={handleOpen} className="botoesModal">
-        {props.button}
-      </button>
-
+      <VisibilityIcon onClick={handleOpen} />
       <Modal
         style={{
           backgroundColor: "white",
@@ -45,9 +45,9 @@ export default function Modals(props) {
             {props.titulo}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {props.select}
             {props.input}
-            <button className="button-field">Salvar</button>
+            <TextAreaTicket width="19.8rem" />
+            <button className="buttonModalSchedule">Salvar</button>
           </Typography>
         </Box>
       </Modal>

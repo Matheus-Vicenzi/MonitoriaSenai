@@ -17,14 +17,19 @@
   flex-direction: column;
 }
 
+.registerCourse img {
+  width: 20%;
+  margin-bottom: 3%;
+  margin-left: 65%;
+}
+
 .modals {
   display: flex;
-  justify-content: end;
-  margin: 2% 10% 0 0;
+  margin-left: 62%;
 }
 
 .courseDiscipline {
-  margin: 2% 0 0 7%;
+  margin-right: 70%;
 }
 
 .registerCourse {

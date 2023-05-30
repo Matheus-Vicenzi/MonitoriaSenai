@@ -5,11 +5,18 @@ import "./LoginBox.css";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import { Link } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
+import { useState } from "react";
 import LogoSenai from "../LogoSenai/LogoSenai";
 
-export default function LoginBox(props) {
+export default function LoginBox({ eventos, name, icon }) {
+  const [email, setEmail] = useState("");
+
+  const handleChange = (event) => {
+    console.log("ola");
+  };
+
   return (
-    <>
+    <div className="container">
       <LogoSenai url="/src/assets/imgs/logo-unisenai.png" alt="Logo UniSenai" />
       <div className="login-box">
         <h1>Faça Login</h1>
@@ -18,7 +25,11 @@ export default function LoginBox(props) {
           style={{
             width: "100%",
           }}>
-          <Inputs name="Email" icon={<MailRoundedIcon />} />
+          <Inputs
+            eventos={handleChange}
+            name="Email"
+            icon={<MailRoundedIcon />}
+          />
         </div>
         <div
           className="field-box"
@@ -42,6 +53,6 @@ export default function LoginBox(props) {
           <Link to="/Register"> Registre-se</Link>
         </p>
       </div>
-    </>
+    </div>
   );
 }

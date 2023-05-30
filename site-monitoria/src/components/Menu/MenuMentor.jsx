@@ -6,11 +6,11 @@ import ListaMenuMentor from "./ListaMenuMentor";
 
 export default function MenuMentor(props) {
   return (
-    <div>
+    <div className="containerMentor">
       <Menu
         lista={<ListaMenuMentor />}
         titulo="Seja Bem Vindo a Monitoria"
-        imagem={
+        logo={
           <LogoSenai
             url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"

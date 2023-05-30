@@ -21,7 +21,7 @@ export default function ViewTicketsStudents(props) {
 
   return (
     <>
-      <div className="VisualizarChamados">
+      <div className="containerViewTickets">
         <Menu
           lista={<ListaMenuStudent />}
           logo={
@@ -35,17 +35,20 @@ export default function ViewTicketsStudents(props) {
             <TableContainer
               component={Paper}
               style={{ backgroundColor: "#E7EFF7" }}>
-              <Table sx={{ minWidth: 100 }} aria-label="simple table">
+              <Table
+                sx={{ minWidth: 100 }}
+                aria-label="simple table"
+                className="tableView">
                 <TableHead>
                   <TableRow>
                     <TableCell align="center">
                       <h3>Data de Abertura e Horário</h3>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <h3>Nome do Monitor</h3>
                     </TableCell>
-                    <TableCell align="center">
-                      <h3>Assunto</h3>
+                    <TableCell align="left">
+                      <h3>Descrição</h3>
                     </TableCell>
                     <TableCell align="center">
                       <h3>Status</h3>
@@ -56,8 +59,8 @@ export default function ViewTicketsStudents(props) {
                   <TableRow
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                     <TableCell align="center">sdsd</TableCell>
-                    <TableCell align="center">sdsd</TableCell>
-                    <TableCell align="center">sdsdsd</TableCell>
+                    <TableCell align="left">sdsd</TableCell>
+                    <TableCell align="left">sdsdsd</TableCell>
                     <TableCell align="center">sdsdsdsd</TableCell>
                   </TableRow>
                 </TableBody>

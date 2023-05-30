@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ViewTickets.css";
+import { chamados } from "../../chamados";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -12,9 +13,16 @@ import Menu from "../Menu/Menu";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
 
 export default function ViewTicketsMentor() {
+  const [dadosChamados, setDadosChamados] = useState([]);
+
+  useEffect(() => {
+    setDadosChamados(chamados);
+  }, []);
+  console.log(chamados);
+
   return (
     <>
-      <div className="VisualizarChamados">
+      <div className="containerViewTickets">
         <Menu
           lista={<ListaMenuMentor />}
           logo={
@@ -23,7 +31,7 @@ export default function ViewTicketsMentor() {
               alt="Logo UniSenai"
             />
           }
-          titulo="Agenda Monitor"
+          titulo="Visualizar Chamados"
           conteudo={
             <TableContainer
               component={Paper}
@@ -34,13 +42,13 @@ export default function ViewTicketsMentor() {
                     <TableCell align="center">
                       <h3>Data de Abertura e Horário</h3>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <h3>Nome do Aluno</h3>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <h3>Disciplina</h3>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <h3>Assunto</h3>
                     </TableCell>
                     <TableCell align="center">
@@ -49,16 +57,19 @@ export default function ViewTicketsMentor() {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  <TableRow
-                    sx={{
-                      "&:last-child td, &:last-child th": { border: 0 },
-                    }}>
-                    <TableCell align="center">sdsd</TableCell>
-                    <TableCell align="center">sdsd</TableCell>
-                    <TableCell align="center">sdsdsd</TableCell>
-                    <TableCell align="center">sdsdsdsd</TableCell>
-                    <TableCell align="center">ok</TableCell>
-                  </TableRow>
+                  {chamados &&
+                    chamados.map((chama) => (
+                      <TableRow
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}>
+                        <TableCell align="center">{chama.data}</TableCell>
+                        <TableCell align="left">{chama.nome}</TableCell>
+                        <TableCell align="left">{chama.disciplina}</TableCell>
+                        <TableCell align="left">{chama.assunto}</TableCell>
+                        <TableCell align="center">ok</TableCell>
+                      </TableRow>
+                    ))}
                 </TableBody>
               </Table>
             </TableContainer>

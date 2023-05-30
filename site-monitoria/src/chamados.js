@@ -1,0 +1,38 @@
+export const chamados = [
+  {
+    id: 1,
+    name: "Vicenzi",
+    email: "matheus.vicenzi2000@gmail.com",
+    password: null,
+    securityLevel: "ADMINISTRATOR",
+    phone: "47920011436",
+    active: true,
+  },
+  {
+    id: 2,
+    name: "Vicenzi",
+    email: "matheus.vicenzi2000@gmail.com",
+    password: null,
+    securityLevel: "ADMINISTRATOR",
+    phone: "47920011436",
+    active: true,
+  },
+  {
+    id: 3,
+    name: "Vicenzi",
+    email: "matheus.vicenzi2000@gmail.com",
+    password: null,
+    securityLevel: "ADMINISTRATOR",
+    phone: "47920011436",
+    active: true,
+  },
+  {
+    id: 4,
+    name: "Vicenzi",
+    email: "matheus.vicenzi2000@gmail.com",
+    password: "123@abc",
+    securityLevel: "ADMINISTRATOR",
+    phone: "47920011436",
+    active: true,
+  },
+];

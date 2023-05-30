@@ -6,3 +6,9 @@
   border-radius: 10px;
   font-weight: bold;
 }
+
+.VisualizarChamados img {
+  width: 20%;
+  margin-left: 65%;
+  margin-bottom: 3%;
+}

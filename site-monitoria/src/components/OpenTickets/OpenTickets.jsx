@@ -8,19 +8,16 @@ import PersonIcon from "@mui/icons-material/Person";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import ArticleIcon from "@mui/icons-material/Article";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import SelectMaior from "../Select/SelectMaior";
+import SelectMaior from "../Select/SelectBigger";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
 import Menu from "../Menu/Menu";
-import { Input } from "@mui/material";
-import InputsLittle from "../Inputs/InputsLittle";
+import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
 
 export default function OpenTickets(props) {
   const [value, setValue] = useState();
   return (
-    <div className="">
+    <div className="containerOpenTickets">
       <Menu
         lista={<ListaMenuStudent />}
         logo={
@@ -32,11 +29,6 @@ export default function OpenTickets(props) {
         titulo="Abertura de Monitoria"
         conteudo={
           <>
-            <InputsLittle
-              name="Assunto da Monitoria"
-              icon={<ArticleIcon />}
-              className="openTicket"
-            />
             <SelectMaior icon={<AutoStoriesIcon />} name="Disciplina" />
             <SelectMaior icon={<PersonIcon />} name="Monitor" />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -50,7 +42,8 @@ export default function OpenTickets(props) {
               </DemoContainer>
             </LocalizationProvider>
             <SelectMaior icon={<AccessTimeIcon />} name="Horário" />
-            <button className="button-field">Agendar</button>
+            <TextAreaTicket width="30rem" />
+            <button className="buttonOpen">Agendar</button>
           </>
         }
       />

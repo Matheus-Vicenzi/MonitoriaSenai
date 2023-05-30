@@ -21,10 +21,6 @@ header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAp
   padding: 1%;
 }
 
-.logoMenuPrincipal {
-  margin-top: -3%;
-}
-
 .conteudo {
   display: flex;
   align-items: center;
@@ -36,6 +32,14 @@ header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAp
   width: 30%;
   margin-left: 67%;
 }
-.menuInicio {
+.containerStudent {
   margin-top: 8%;
+}
+
+.containerMentor {
+  margin-top: 8%;
+}
+
+h4 {
+  color: var(--letter-color);
 }

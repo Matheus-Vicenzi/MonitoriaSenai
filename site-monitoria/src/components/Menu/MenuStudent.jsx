@@ -7,11 +7,11 @@ import ListaMenuStudent from "./ListaMenuStudent";
 
 export default function MenuStudent(props) {
   return (
-    <div>
+    <div className="containerStudent">
       <Menu
         lista={<ListaMenuStudent />}
         titulo="Seja Bem Vindo a Monitoria"
-        imagem={
+        logo={
           <LogoSenai
             url="/src/assets/imgs/logo-unisenai.png"
             alt="Logo UniSenai"

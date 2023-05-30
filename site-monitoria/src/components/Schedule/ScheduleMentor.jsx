@@ -3,15 +3,18 @@ import "./ScheduleMentor.css";
 import Menu from "../Menu/Menu";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
+import ModalSchedule from "../Modal.jsx/ModalSchedule";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 import TableRow from "@mui/material/TableRow";
+import Inputs from "../Inputs/Inputs";
 import Paper from "@mui/material/Paper";
 import LogoSenai from "../LogoSenai/LogoSenai";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
 
-export default function ScheduleMentor() {
+export default function ScheduleMentor(props) {
   return (
     <div className="VisualizarChamados">
       <Menu
@@ -22,7 +25,7 @@ export default function ScheduleMentor() {
             alt="Logo UniSenai"
           />
         }
-        titulo="Gerenciamento de Contas"
+        titulo="Agenda Monitor"
         conteudo={
           <TableContainer
             component={Paper}
@@ -34,10 +37,7 @@ export default function ScheduleMentor() {
                     <h3>Nome Aluno</h3>
                   </TableCell>
                   <TableCell align="center">
-                    <h3>Assunto da Monitoria</h3>
-                  </TableCell>
-                  <TableCell align="center">
-                    <h3>Data e hora</h3>
+                    <h3>Data de Abertura e Horário</h3>
                   </TableCell>
                   <TableCell align="center">
                     <h3>Ação</h3>
@@ -51,11 +51,16 @@ export default function ScheduleMentor() {
                   }}>
                   <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center">sdsd</TableCell>
-                  <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center" className="tablePerfil">
-                    <button className="button-Schedule">
-                      Concluir Monitoria
-                    </button>
+                    <ModalSchedule
+                      titulo="Cadastro de Curso"
+                      input={
+                        <>
+                          <Inputs name="Disciplina" icon={<MenuBookIcon />} />
+                          <Inputs name="Curso" icon={<MenuBookIcon />} />
+                        </>
+                      }
+                    />
                   </TableCell>
                 </TableRow>
               </TableBody>

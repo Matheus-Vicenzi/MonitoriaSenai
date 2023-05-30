@@ -1,3 +1,27 @@
 .openTicket {
   width: 10rem !important;
 }
+
+.css-1nvn3ta-JoyTextarea-root {
+  --Textarea-focusedHighlight: none !important;
+}
+
+.containerOpenTickets img {
+  width: 20%;
+  margin-bottom: 3%;
+  margin-left: 65%;
+}
+
+.buttonOpen {
+  font-size: 12pt;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  width: 30rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 15px;
+  background-color: var(--letter-color);
+  border: none;
+  color: var(--white-color);
+}
