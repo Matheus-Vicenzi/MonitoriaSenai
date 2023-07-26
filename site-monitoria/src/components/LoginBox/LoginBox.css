@@ -30,11 +30,11 @@ input {
 .esqueciSenha {
   text-decoration: none;
   color: var(--letter-color);
-  font-size: 14pt;
-  margin-top: 8px;
+  font-size: 12pt;
+  margin-top: 10px;
   text-decoration: underline;
   cursor: pointer;
-  margin-right: 12%;
+  margin-right: 11%;
   align-self: flex-end;
 }
 
@@ -48,20 +48,22 @@ input {
 .login-box a {
   text-decoration: none;
   color: var(--letter-color);
-  font-size: 14pt;
+  font-size: 13pt;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.button-field {
+.button-field,
+.button-fieldB {
   font-size: 12pt;
   border-radius: 5px;
+  text-align: center;
   margin-top: 0.5rem;
   letter-spacing: 1px;
-  width: 58rem;
+  width: 80%;
   font-family: "Inter", sans-serif;
   cursor: pointer;
-  padding: 15px;
+  padding: 8px;
   background-color: var(--letter-color);
   border: none;
   color: var(--white-color);

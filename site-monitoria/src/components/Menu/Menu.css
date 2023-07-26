@@ -43,3 +43,16 @@ header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAp
 h4 {
   color: var(--letter-color);
 }
+
+a {
+  text-decoration: none;
+  color: var(--letter-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: normal;
+}
+
+svg {
+  margin: 10px;
+}

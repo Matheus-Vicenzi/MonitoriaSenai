@@ -4,7 +4,15 @@ import Input from "@mui/material/Input";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
-export default function Inputs({ name, icon, eventos }) {
+export default function Inputs({
+  nameLabel,
+  name,
+  icon,
+  eventos,
+  width,
+  disabled,
+  value,
+}) {
   return (
     <>
       <FormControl
@@ -14,19 +22,21 @@ export default function Inputs({ name, icon, eventos }) {
           backgroundColor: "#e8e8eb",
           border: "2.5px solid #005caa",
           borderRadius: "7px",
-          width: "80%",
+          width: `${width}`,
           marginTop: "6px",
         }}
-        required={true}>
+        onChange={eventos}
+        disabled={disabled}>
         <InputLabel
           style={{
             color: "#005caa",
             display: "flex",
             alignItems: "center",
+            marginTop: "-4px",
           }}>
-          {icon}&nbsp; {name}
+          {icon}&nbsp; {nameLabel}
         </InputLabel>
-        <OutlinedInput label="Login" />
+        <OutlinedInput name={name} value={value} />
       </FormControl>
     </>
   );

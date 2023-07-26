@@ -8,6 +8,7 @@ export default function TextAreaTicket(props) {
       <FormControl
         className="login-field"
         variant="filled"
+        onChange={props.eventos}
         style={{
           backgroundColor: "#e8e8eb",
           border: "2.5px solid #005caa",
@@ -17,6 +18,9 @@ export default function TextAreaTicket(props) {
         }}
         required={true}>
         <Textarea
+          disabled={props.disabled}
+          value={props.value}
+          name={props.name}
           minRows={2}
           placeholder="Descrição da Monitoria"
           style={{

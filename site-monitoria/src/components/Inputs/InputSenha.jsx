@@ -11,7 +11,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import { Link } from "react-router-dom";
 
-export default function InputSenha(props) {
+export default function InputSenha({ eventos, name, icon, nameLabel }) {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -29,19 +29,19 @@ export default function InputSenha(props) {
           borderRadius: "7px",
           border: "2.5px solid #005caa",
           width: "80%",
+          marginTop: "6px",
         }}
-        required={true}>
+        onChange={eventos}>
         <InputLabel
           style={{
             color: "#005caa",
-            marginTop: "-0.7%",
             display: "flex",
+            alignItems: "center",
+            marginTop: "-4px",
           }}>
-          {props.icon} &nbsp; {props.name}
+          {icon} &nbsp; {nameLabel}
         </InputLabel>
         <OutlinedInput
-          className="outline"
-          id="outlined-adornment-password"
           type={showPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment>
@@ -52,6 +52,7 @@ export default function InputSenha(props) {
               </IconButton>
             </InputAdornment>
           }
+          name={name}
           label="Password"
         />
       </FormControl>

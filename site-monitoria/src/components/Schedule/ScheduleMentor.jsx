@@ -9,6 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import TableRow from "@mui/material/TableRow";
+import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
 import Inputs from "../Inputs/Inputs";
 import Paper from "@mui/material/Paper";
 import LogoSenai from "../LogoSenai/LogoSenai";
@@ -37,10 +38,16 @@ export default function ScheduleMentor(props) {
                     <h3>Nome Aluno</h3>
                   </TableCell>
                   <TableCell align="center">
-                    <h3>Data de Abertura e Horário</h3>
+                    <h3>Data de Solicitação</h3>
                   </TableCell>
                   <TableCell align="center">
-                    <h3>Ação</h3>
+                    <h3>Data do Agendamento</h3>
+                  </TableCell>
+                  <TableCell align="center">
+                    <h3>Status</h3>
+                  </TableCell>
+                  <TableCell align="center">
+                    <h3>Info</h3>
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -51,13 +58,44 @@ export default function ScheduleMentor(props) {
                   }}>
                   <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center">sdsd</TableCell>
+                  <TableCell align="center">sdsd</TableCell>
+                  <TableCell align="center">sdsd</TableCell>
                   <TableCell align="center" className="tablePerfil">
                     <ModalSchedule
-                      titulo="Cadastro de Curso"
+                      titulo="Dados da Agenda"
                       input={
                         <>
-                          <Inputs name="Disciplina" icon={<MenuBookIcon />} />
-                          <Inputs name="Curso" icon={<MenuBookIcon />} />
+                          <>
+                            <Inputs
+                              nameLabel="Disciplina"
+                              icon={<MenuBookIcon />}
+                              width="80%"
+                              disabled="disabled"
+                              value="kkkkk"
+                            />
+                            <Inputs
+                              nameLabel="Curso"
+                              icon={<MenuBookIcon />}
+                              width="80%"
+                              disabled="disabled"
+                              value="kkkkk"
+                            />
+                          </>
+                          <TextAreaTicket
+                            width="19.8rem"
+                            disabled="disabled"
+                            value="kkkkk"
+                          />
+                          <select className="selectOpenTickets">
+                            <option value={1}>Selecione o status</option>
+                            <option value={2}>Aceito</option>
+                            <option value={3}>Pendente</option>
+                            <option value={4}>Rejeitado</option>
+                            <option value={5}>Finalizado</option>
+                          </select>
+                          <button className="buttonModalSchedule">
+                            Confirmar Monitoria
+                          </button>
                         </>
                       }
                     />

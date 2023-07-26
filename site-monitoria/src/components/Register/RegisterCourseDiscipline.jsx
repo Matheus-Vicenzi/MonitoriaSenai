@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LogoSenai from "../LogoSenai/LogoSenai";
 import Modals from "../Modal.jsx/Modals";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import { Box } from "@mui/material";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import MinimizeIcon from "@mui/icons-material/Minimize";
@@ -12,14 +11,126 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import TableHead from "@mui/material/TableHead";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import TableRow from "@mui/material/TableRow";
+import axios from "axios";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import ListItemText from "@mui/material/ListItemText";
+import Select from "@mui/material/Select";
+import Checkbox from "@mui/material/Checkbox";
 import Inputs from "../Inputs/Inputs";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
-import SelectC from "../Select/SelectC";
+import InputLabel from "@mui/material/InputLabel";
 import Menu from "../Menu/Menu";
+
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
 
-export default function RegisterCourseDiscipline() {
-  const [open, setOpen] = React.useState(false);
+export default function RegisterCourseDiscipline(props) {
+  const handleClose = () => setOpen(false);
+  const handleCloseTable = () => setOpenTable(false);
+  const handleCloseCourse = () => setOpenCourse(false);
+  const [open, setOpen] = useState(false);
+  const [openTable, setOpenTable] = useState(false);
+  const [openCourse, setOpenCourse] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleOpenCourse = () => setOpenCourse(true);
+
+  useEffect(() => {
+    getCouser();
+  }, []);
+
+  const [status, setStatus] = useState({
+    type: "",
+    mensagem: "",
+  });
+
+  const [courseValue, setCourseValue] = useState([]);
+
+  const [course, setCourse] = useState([]);
+
+  const [subject, setSubject] = useState([]);
+
+  const [personName, setPersonName] = React.useState([]);
+
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  const getCouser = () => {
+    axios.get("http://localhost:8080/api/course").then((response) => {
+      setCourseValue(response.data);
+    });
+  };
+
+  const handleChange = (event) => {
+    setCourse({ ...course, [event.target.name]: event.target.value });
+  };
+
+  const handleChangeSubject = (event) => {
+    setSubject({ ...subject, [event.target.name]: event.target.value });
+  };
+
+  console.log(subject);
+
+  const handleChangeSelect = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === "string" ? value.split(",") : value);
+    handleChangeSubject(event);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("chegou");
+
+    axios
+      .post("http://localhost:8080/api/course", course)
+      .then((response) => {
+        setStatus({
+          type: "success",
+          mensagem: "Curso cadastrado com sucesso!",
+        });
+        window.location.reload();
+      })
+      .catch(function (err) {
+        setStatus({
+          type: "error",
+          mensagem: "Erro! Curso não cadastrado!",
+        });
+      });
+  };
+
+  const handleSubmitSubject = async (e) => {
+    e.preventDefault();
+    console.log("chegou");
+
+    axios
+      .post("http://localhost:8080/api/subject", subject)
+      .then((response) => {
+        setStatus({
+          type: "success",
+          mensagem: "Disciplina cadastrada com sucesso!",
+        });
+        window.location.reload();
+      })
+      .catch(function (err) {
+        setStatus({
+          type: "error",
+          mensagem: "Erro ao cadastrar disciplina!",
+        });
+      });
+  };
+
   return (
     <>
       <div className="registerCourse">
@@ -36,69 +147,171 @@ export default function RegisterCourseDiscipline() {
               <h1 className="TituloCurso">Cadastro de Curso e Disciplina</h1>
 
               <div className="modals">
+                <button onClick={handleOpenCourse} className="botoesModal">
+                  Adicionar Curso
+                </button>
                 <Modals
-                  button="Adicionar Curso"
+                  open={openCourse}
+                  onClose={handleCloseCourse}
                   titulo="Cadastro de Curso"
-                  input={
-                    <Inputs name="Nome do Curso" icon={<MenuBookIcon />} />
+                  conteudo={
+                    <>
+                      {status.type === "success" ? (
+                        <p style={{ color: "green" }}>{status.mensagem}</p>
+                      ) : (
+                        ""
+                      )}
+                      {status.type === "error" ? (
+                        <p style={{ color: "red" }}>{status.mensagem} </p>
+                      ) : (
+                        ""
+                      )}
+                      <form onSubmit={handleSubmit}>
+                        <Inputs
+                          name="name"
+                          eventos={handleChange}
+                          nameLabel="Nome do Curso"
+                          width="80%"
+                          icon={<BorderColorIcon />}
+                        />
+
+                        <button className="buttonModalSchedule">Salvar</button>
+                      </form>
+                    </>
                   }
                 />
+
+                <button onClick={handleOpen} className="botoesModal">
+                  Adicionar Disciplina
+                </button>
+
                 <Modals
-                  button="Adicionar Disciplina"
+                  open={open}
+                  onClose={handleClose}
                   titulo="Cadastro de Disciplina"
-                  select={<SelectC icon={<MenuBookIcon />} name="Curso" />}
-                  input={
-                    <Inputs
-                      name="Nome da Disciplina"
-                      icon={<BorderColorIcon />}
-                    />
+                  conteudo={
+                    <>
+                      {status.type === "success" ? (
+                        <p style={{ color: "green" }}>{status.mensagem}</p>
+                      ) : (
+                        ""
+                      )}
+                      {status.type === "error" ? (
+                        <p style={{ color: "red" }}>{status.mensagem} </p>
+                      ) : (
+                        ""
+                      )}
+                      <form onSubmit={handleSubmitSubject}>
+                        <FormControl
+                          variant="filled"
+                          sx={{ m: 1, width: 300 }}
+                          style={{
+                            backgroundColor: "#e8e8eb",
+                            borderRadius: "7px",
+                            border: "2.5px solid #005caa",
+                            width: "80%",
+                            marginTop: "6px",
+                          }}>
+                          <InputLabel
+                            id="demo-multiple-checkbox-label"
+                            style={{
+                              color: "#005caa",
+                              fontSize: "11pt",
+                              display: "flex",
+                              alignItems: "center",
+                              marginTop: "-4px",
+                            }}>
+                            <MenuBookIcon /> &nbsp; Curso
+                          </InputLabel>
+                          <Select
+                            id="demo-multiple-checkbox"
+                            multiple
+                            name="coursesId"
+                            value={personName}
+                            input={<OutlinedInput label="Selecione" />}
+                            onChange={handleChangeSelect}
+                            renderValue={(selected) => selected.join(", ")}
+                            MenuProps={MenuProps}>
+                            {courseValue?.data &&
+                              courseValue?.data.map((option) => (
+                                <MenuItem
+                                  key={option.id}
+                                  value={option.id}
+                                  label={option.name}>
+                                  <Checkbox
+                                    checked={personName.indexOf(option.id) > -1}
+                                  />
+                                  <ListItemText primary={option.name} />
+                                </MenuItem>
+                              ))}
+                          </Select>
+                        </FormControl>
+
+                        <Inputs
+                          name="name"
+                          eventos={handleChangeSubject}
+                          width="80%"
+                          nameLabel="Nome da Disciplina"
+                          icon={<BorderColorIcon />}
+                        />
+                        <button className="buttonModalSchedule">Salvar</button>
+                      </form>
+                    </>
                   }
                 />
               </div>
 
               <div className="courseDiscipline">
-                <React.Fragment>
-                  <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-                    <TableCell>
-                      <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(!open)}>
-                        {open ? (
-                          <RemoveCircleOutlineIcon />
-                        ) : (
-                          <ControlPointIcon />
-                        )}
-                      </IconButton>
-                    </TableCell>
-                    <TableCell
-                      component="th"
-                      scope="row"
-                      style={{ color: "black" }}>
-                      Curso
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell
-                      style={{ paddingBottom: 0, paddingTop: 0 }}
-                      colSpan={6}>
-                      <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ margin: 1 }}>
-                          <Table size="small" aria-label="purchases">
-                            <TableHead>
-                              <TableRow>
-                                <IconButton style={{ marginTop: "-10px" }}>
-                                  <MinimizeIcon />
-                                </IconButton>
-                                <TableCell>Disciplina</TableCell>
-                              </TableRow>
-                            </TableHead>
-                          </Table>
-                        </Box>
-                      </Collapse>
-                    </TableCell>
-                  </TableRow>
-                </React.Fragment>
+                <>
+                  {courseValue?.data &&
+                    courseValue?.data.map((option) => (
+                      <>
+                        <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
+                          <TableCell>
+                            <IconButton
+                              size="small"
+                              onClick={() => setOpenTable(!openTable)}>
+                              {openTable ? (
+                                <RemoveCircleOutlineIcon />
+                              ) : (
+                                <ControlPointIcon />
+                              )}
+                            </IconButton>
+                          </TableCell>
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            style={{ color: "black" }}>
+                            {option.name}
+                          </TableCell>
+                        </TableRow>
+                        <TableRow style={{ marginLeft: "25px" }}>
+                          <TableCell
+                            style={{ paddingBottom: 0, paddingTop: 0 }}
+                            colSpan={6}>
+                            <Collapse
+                              in={openTable}
+                              timeout="auto"
+                              unmountOnExit>
+                              <Box sx={{ margin: 1 }}>
+                                <Table size="small">
+                                  <TableHead>
+                                    <TableRow>
+                                      <IconButton
+                                        style={{ marginTop: "-10px" }}>
+                                        <MinimizeIcon />
+                                      </IconButton>
+                                      <TableCell></TableCell>
+                                    </TableRow>
+                                  </TableHead>
+                                </Table>
+                              </Box>
+                            </Collapse>
+                          </TableCell>
+                        </TableRow>
+                      </>
+                    ))}
+                </>
               </div>
             </>
           }

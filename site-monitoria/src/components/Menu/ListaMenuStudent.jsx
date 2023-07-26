@@ -16,14 +16,19 @@ export default function ListaMenuStudent() {
         <ListItem key={text}>
           <ListItemButton>
             <ListItemIcon>
-              <Link to="/OpenTickets">{index == 0 && <AddIcon />}</Link>
-              <Link to="/ViewTicketsStudent">
-                {index == 1 && <HeadsetMicIcon />}
+              <Link to="/OpenTickets">
+                {index == 0 && <AddIcon />} {index == 0 ? text : ""}
               </Link>
-              <Link to="/Student">{index == 2 && <PersonIcon />}</Link>
-              <Link to="/">{index == 3 && <ExitToAppIcon />}</Link>
+              <Link to="/ViewTicketsStudent">
+                {index == 1 && <HeadsetMicIcon />} {index == 1 ? text : ""}
+              </Link>
+              <Link to="/Student">
+                {index == 2 && <PersonIcon />} {index == 2 ? text : ""}{" "}
+              </Link>
+              <Link to="/">
+                {index == 3 && <ExitToAppIcon />} {index == 3 ? text : ""}
+              </Link>
             </ListItemIcon>
-            <ListItemText primary={text} />
           </ListItemButton>
         </ListItem>
       ))}

@@ -6,7 +6,6 @@ import Box from "@mui/material/Box";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Modal } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
-import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
 
 export default function Modals(props) {
   const handleClose = () => setOpen(false);
@@ -19,12 +18,13 @@ export default function Modals(props) {
         style={{
           backgroundColor: "white",
           color: "#005caa",
+          height: 500,
           textAlign: "center",
           position: "absolute",
           borderRadius: "10%",
-          top: "50%",
+          top: "43%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -40%)",
           width: 400,
           border: "3px solid #ffff",
         }}
@@ -42,12 +42,11 @@ export default function Modals(props) {
             color="#005caa"
             fontWeight="bolder"
             component="h2">
-            {props.titulo}
+            {props.titulo} <br />
+            {props.status}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {props.input}
-            <TextAreaTicket width="19.8rem" />
-            <button className="buttonModalSchedule">Salvar</button>
           </Typography>
         </Box>
       </Modal>

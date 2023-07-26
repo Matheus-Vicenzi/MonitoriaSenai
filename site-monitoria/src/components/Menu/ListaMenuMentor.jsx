@@ -24,18 +24,21 @@ export default function ListaMenuMentor() {
           <ListItemButton>
             <ListItemIcon>
               <Link to="/RegisterCourseDiscipline">
-                {index == 0 && <AddIcon />}
+                {index == 0 && <AddIcon />} {index == 0 ? text : ""}
               </Link>
-              <Link to="/ScheduleMentor">{index == 1 && <TodayIcon />}</Link>
+              <Link to="/ScheduleMentor">
+                {index == 1 && <TodayIcon />} {index == 1 ? text : ""}
+              </Link>
               <Link to="/ViewTicketsMentor">
-                {index == 2 && <HeadsetMicIcon />}
+                {index == 2 && <HeadsetMicIcon />} {index == 2 ? text : ""}
               </Link>
               <Link to="/UserManagement">
-                {index == 3 && <ManageAccountsIcon />}
+                {index == 3 && <ManageAccountsIcon />} {index == 3 ? text : ""}
               </Link>
-              <Link to="/">{index == 4 && <ExitToAppIcon />}</Link>
+              <Link to="/">
+                {index == 4 && <ExitToAppIcon />} {index == 4 ? text : ""}
+              </Link>
             </ListItemIcon>
-            <ListItemText primary={text} />
           </ListItemButton>
         </ListItem>
       ))}

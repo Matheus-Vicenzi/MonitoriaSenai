@@ -3,12 +3,16 @@ import "./ViewTickets.css";
 import { chamados } from "../../chamados";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
+import Paper from "@mui/material/Paper";
+import LogoSenai from "../LogoSenai/LogoSenai";
+import ModalSchedule from "../Modal.jsx/ModalSchedule";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import LogoSenai from "../LogoSenai/LogoSenai";
+import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
+import Inputs from "../Inputs/Inputs";
 import Menu from "../Menu/Menu";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
 
@@ -40,19 +44,13 @@ export default function ViewTicketsMentor() {
                 <TableHead>
                   <TableRow>
                     <TableCell align="center">
-                      <h3>Data de Abertura e Horário</h3>
-                    </TableCell>
-                    <TableCell align="left">
-                      <h3>Nome do Aluno</h3>
-                    </TableCell>
-                    <TableCell align="left">
-                      <h3>Disciplina</h3>
-                    </TableCell>
-                    <TableCell align="left">
-                      <h3>Assunto</h3>
+                      <h3>Nome Aluno</h3>
                     </TableCell>
                     <TableCell align="center">
-                      <h3>Status</h3>
+                      <h3>Data de Abertura e Horário</h3>
+                    </TableCell>
+                    <TableCell align="center">
+                      <h3>Ação</h3>
                     </TableCell>
                   </TableRow>
                 </TableHead>
@@ -63,11 +61,39 @@ export default function ViewTicketsMentor() {
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}>
-                        <TableCell align="center">{chama.data}</TableCell>
-                        <TableCell align="left">{chama.nome}</TableCell>
-                        <TableCell align="left">{chama.disciplina}</TableCell>
-                        <TableCell align="left">{chama.assunto}</TableCell>
-                        <TableCell align="center">ok</TableCell>
+                        <TableCell align="center">sdsd</TableCell>
+                        <TableCell align="center">sdsd</TableCell>
+                        <TableCell align="center" className="tablePerfil">
+                          <ModalSchedule
+                            titulo="Dados dos Chamados"
+                            status="Ok"
+                            input={
+                              <>
+                                <>
+                                  <Inputs
+                                    nameLabel="Disciplina"
+                                    icon={<MenuBookIcon />}
+                                    width="80%"
+                                    disabled="disabled"
+                                    value="kkkkk"
+                                  />
+                                  <Inputs
+                                    nameLabel="Curso"
+                                    icon={<MenuBookIcon />}
+                                    width="80%"
+                                    disabled="disabled"
+                                    value="kkkkk"
+                                  />
+                                </>
+                                <TextAreaTicket
+                                  width="19.8rem"
+                                  disabled="disabled"
+                                  value="kkkkk"
+                                />
+                              </>
+                            }
+                          />
+                        </TableCell>
                       </TableRow>
                     ))}
                 </TableBody>

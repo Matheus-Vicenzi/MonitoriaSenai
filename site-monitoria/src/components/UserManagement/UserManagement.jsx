@@ -2,7 +2,6 @@ import React from "react";
 import Table from "@mui/material/Table";
 import { useState, useEffect } from "react";
 import TableBody from "@mui/material/TableBody";
-import { chamados } from "../../chamados";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
@@ -12,17 +11,9 @@ import "./UserManagement.css";
 import LogoSenai from "../LogoSenai/LogoSenai";
 import Menu from "../Menu/Menu";
 import ListaMenuMentor from "../Menu/ListaMenuMentor";
-import SelectC from "../Select/SelectC";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 export default function UserManagement() {
-  const [dadosChamados, setDadosChamados] = useState([]);
-
-  useEffect(() => {
-    setDadosChamados(chamados);
-  }, []);
-
-  console.log(chamados);
   return (
     <div className="containerUser">
       <Menu
@@ -40,10 +31,7 @@ export default function UserManagement() {
             style={{
               backgroundColor: "#E7EFF7",
             }}>
-            <Table
-              sx={{ minWidth: 100 }}
-              aria-label="simple table"
-              style={{ marginLeft: "3%", width: "95%" }}>
+            <Table sx={{ minWidth: 100 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell align="left">
@@ -58,19 +46,19 @@ export default function UserManagement() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {chamados &&
-                  chamados.map((chama) => (
-                    <TableRow
-                      sx={{
-                        "&:last-child td, &:last-child th": { border: 0 },
-                      }}>
-                      <TableCell align="left">{chama.nome}</TableCell>
-                      <TableCell align="left">{chama.email}</TableCell>
-                      <TableCell align="center" className="tablePerfil">
-                        <SelectC icon={<ManageAccountsIcon />} name="Perfil" />
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                <TableRow
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                  }}>
+                  <TableCell align="left"></TableCell>
+                  <TableCell align="left"></TableCell>
+                  <TableCell align="center" className="tablePerfil">
+                    <select className="selectUserMana">
+                      <option value={20}>Admin</option>
+                      <option value={30}>Aluno</option>
+                    </select>
+                  </TableCell>
+                </TableRow>
               </TableBody>
             </Table>
           </TableContainer>

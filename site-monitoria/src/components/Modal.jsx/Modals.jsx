@@ -6,15 +6,8 @@ import Box from "@mui/material/Box";
 import { Modal } from "@mui/material";
 
 export default function Modals(props) {
-  const handleClose = () => setOpen(false);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
   return (
     <>
-      <button onClick={handleOpen} className="botoesModal">
-        {props.button}
-      </button>
-
       <Modal
         style={{
           backgroundColor: "white",
@@ -28,8 +21,8 @@ export default function Modals(props) {
           width: 400,
           border: "3px solid #ffff",
         }}
-        open={open}
-        onClose={handleClose}
+        open={props.open}
+        onClose={props.onClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box
@@ -45,9 +38,7 @@ export default function Modals(props) {
             {props.titulo}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {props.select}
-            {props.input}
-            <button className="button-field">Salvar</button>
+            {props.conteudo}
           </Typography>
         </Box>
       </Modal>
