@@ -4,13 +4,10 @@ import ListaMenuStudent from "../Menu/ListaMenuStudent";
 import { useState, useEffect } from "react";
 import LogoSenai from "../LogoSenai/LogoSenai";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import PersonIcon from "@mui/icons-material/Person";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import * as yup from "yup";
 import axios from "axios";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Menu from "../Menu/Menu";
 import TextAreaTicket from "../TextAreaTicket/TextAreaTicket";
 
@@ -31,32 +28,34 @@ export default function OpenTickets(props) {
 
   const [value, setValue] = useState();
 
-  const [horarios, setHorarios] = useState([]);
+  const [hora, setHora] = useState("00:00");
 
-  const criarHorarios = () => {
-    const horariosArray = [];
-    const horarioInicial = new Date();
-    horarioInicial.setHours(0);
-    horarioInicial.setMinutes(0);
+  const handleChangeHour = (event) => {
+    setHora(event.target.value);
+  };
 
-    while (horarioInicial.getHours() < 24) {
-      const hora = horarioInicial.getHours();
-      const minuto = horarioInicial.getMinutes();
-      const horario = `${hora.toString().padStart(2, "0")}:${minuto
-        .toString()
-        .padStart(2, "0")}`;
-      horariosArray.push(horario);
+  const incrementarHora = () => {
+    const [horas, minutos] = hora.split(":");
+    let novaHora = (parseInt(minutos) + 1).toString().padStart(2, "0");
 
-      horarioInicial.setTime(horarioInicial.getTime() + 30 * 60 * 1000);
+    if (novaHora === "60") {
+      novaHora = "00";
+      let novaHoraCompleta = (parseInt(horas) + 1).toString().padStart(2, "0");
+      novaHoraCompleta += ":00";
+      setHora(novaHoraCompleta);
+    } else {
+      setHora(`${horas}:${novaHora}`);
     }
-
-    setHorarios(horariosArray);
   };
 
-  const handleSelectChange = (event) => {
-    const selectedHorario = event.target.value;
-    console.log("Horário selecionado:", selectedHorario);
-  };
+  const horarios = [];
+  for (let h = 13; h < 23; h++) {
+    for (let m = 0; m < 60; m += 30) {
+      horarios.push(
+        `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`
+      );
+    }
+  }
 
   const handleChange = (event) => {
     if (event.target == undefined) {
@@ -162,10 +161,16 @@ export default function OpenTickets(props) {
                 </DemoContainer>
               </LocalizationProvider>
 
-              <select onChange={handleSelectChange}>
-                {horarios.map((horario, index) => (
-                  <option key={index} value={horario}>
-                    {horario}
+              <select
+                value={hora}
+                onChange={handleChange}
+                className="selectOpenTickets">
+                <option value="" disabled selected>
+                  Selecione um horário
+                </option>
+                {horarios.map((opcao) => (
+                  <option key={opcao} value={opcao}>
+                    {opcao}
                   </option>
                 ))}
               </select>
