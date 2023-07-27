@@ -27,26 +27,9 @@ export default function OpenTickets(props) {
   const dataISO = dataDoFrontend.toISOString();
 
   const [value, setValue] = useState();
+  const [textoConcatenado, setTextoConcatenado] = useState("");
 
   const [hora, setHora] = useState("00:00");
-
-  const handleChangeHour = (event) => {
-    setHora(event.target.value);
-  };
-
-  const incrementarHora = () => {
-    const [horas, minutos] = hora.split(":");
-    let novaHora = (parseInt(minutos) + 1).toString().padStart(2, "0");
-
-    if (novaHora === "60") {
-      novaHora = "00";
-      let novaHoraCompleta = (parseInt(horas) + 1).toString().padStart(2, "0");
-      novaHoraCompleta += ":00";
-      setHora(novaHoraCompleta);
-    } else {
-      setHora(`${horas}:${novaHora}`);
-    }
-  };
 
   const horarios = [];
   for (let h = 13; h < 23; h++) {
@@ -57,9 +40,21 @@ export default function OpenTickets(props) {
     }
   }
 
+  const handleChangeHour = (event) => {
+    setHora(event.target.value);
+  };
+  const [hourValue, setHourValue] = useState();
+  useEffect(() => {
+    setHourValue(hora);
+  });
+
   const handleChange = (event) => {
     if (event.target == undefined) {
-      setValue({ ...value, scheduleDate: event?.toISOString() });
+      const horaFormatada = event?.toISOString().slice(0, -10) + "" + hourValue;
+      setValue({
+        ...value,
+        scheduleDate: horaFormatada,
+      });
     } else {
       setValue({
         ...value,
@@ -68,6 +63,7 @@ export default function OpenTickets(props) {
       });
     }
   };
+
   console.log(value);
 
   const handleSubmit = async (e) => {
@@ -131,12 +127,7 @@ export default function OpenTickets(props) {
                   ))}
               </select>
 
-              <input
-                type="hidden"
-                value={dataISO}
-                name="requestDate"
-                onChange={handleChange}
-              />
+              <input type="hidden" value={dataISO} onChange={handleChange} />
 
               <select
                 className="selectOpenTickets"
@@ -152,22 +143,16 @@ export default function OpenTickets(props) {
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["DateCalendar", "DateCalendar"]}>
                   <DemoItem label="">
-                    <DateCalendar
-                      value={value}
-                      name="scheduleDate"
-                      onChange={handleChange}
-                    />
+                    <DateCalendar value={value} onChange={handleChange} />
                   </DemoItem>
                 </DemoContainer>
               </LocalizationProvider>
 
               <select
                 value={hora}
-                onChange={handleChange}
+                name="hora"
+                onChange={handleChangeHour}
                 className="selectOpenTickets">
-                <option value="" disabled selected>
-                  Selecione um horário
-                </option>
                 {horarios.map((opcao) => (
                   <option key={opcao} value={opcao}>
                     {opcao}
