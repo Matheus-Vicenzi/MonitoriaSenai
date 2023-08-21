@@ -11,6 +11,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 import "./Menu.css";
 
@@ -62,6 +65,21 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function Menu(props) {
+  const { id } = useParams();
+
+  const [dadosUser, setDadosUser] = useState();
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const getUser = () => {
+    axios.get("http://localhost:8080/api/user/" + id).then((response) => {
+      setDadosUser(response.data);
+    });
+  };
+
+  console.log(dadosUser?.data.name);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -100,7 +118,10 @@ export default function Menu(props) {
           anchor="left"
           open={open}>
           <DrawerHeader>
-            <h4>Olá, Pessoa!</h4>
+            <h4 style={{ marginTop: "10px" }}>
+              Olá, <br />
+              {dadosUser?.data.name}!
+            </h4>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
                 <ChevronLeftIcon />

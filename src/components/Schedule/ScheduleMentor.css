@@ -28,4 +28,14 @@
 }
 
 .selectOpenTickets {
+  padding: 20px;
+  width: 80%;
+  border-radius: 7px;
+  border: 2.5px solid #005caa;
+  background-color: #e8e8eb;
+  color: var(--letter-color);
+  font-family: "Inter", sans-serif;
+  font-size: 12pt;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }

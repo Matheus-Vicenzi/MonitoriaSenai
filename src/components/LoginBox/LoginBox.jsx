@@ -1,17 +1,13 @@
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import * as yup from "yup";
+import MailRoundedIcon from "@mui/icons-material/MailRounded";
+import LockIcon from "@mui/icons-material/Lock";
 import InputSenha from "../Inputs/InputSenha";
 import Inputs from "../Inputs/Inputs";
-import "/src/index.css";
-import "./LoginBox.css";
-import MailRoundedIcon from "@mui/icons-material/MailRounded";
-import { Link } from "react-router-dom";
-import LockIcon from "@mui/icons-material/Lock";
-import FormControl from "@mui/material/FormControl";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import { useState } from "react";
-import * as yup from "yup";
 import LogoSenai from "../LogoSenai/LogoSenai";
+import "./LoginBox.css";
 
 export default function LoginBox() {
   const [user, setUser] = useState({
@@ -19,46 +15,91 @@ export default function LoginBox() {
     password: "",
   });
 
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const navigate = useNavigate();
+
+  const [permission, setPermission] = useState();
+  const [dadosUser, setDadosUser] = useState();
   const [status, setStatus] = useState({
     type: "",
     mensagem: "",
   });
 
+  useEffect(() => {
+    getUser();
+    if (permission) {
+      verifyPermission();
+    }
+  }, [permission]);
+
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const getUser = () => {
+    axios.get("http://localhost:8080/api/user").then((response) => {
+      setDadosUser(response.data);
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!(await validate())) return;
 
-    axios
-      .post("http://localhost:8080/user", user)
-      .then((response) => {
-        setStatus({
-          type: "success",
-          mensagem: "Usuário cadastrado com sucesso!",
-        });
-      })
-      .catch(function (err) {
-        setStatus({
-          type: "error",
-          mensagem: "Erro! Usuário não cadastrado!",
-        });
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/security/login",
+        user
+      );
+      setPermission(response?.data.data.securityLevel);
+    } catch (err) {
+      setStatus({
+        type: "error",
+        mensagem: "Erro ao efetuar o login!",
       });
+    }
   };
 
+  function verifyPermission() {
+    const usuarios = dadosUser?.data.filter((usr) => usr.email == user.email);
+    const password = dadosUser?.data.filter(
+      (usr) => usr.password == user.password
+    );
+    console.log(password);
+    if (password.length === 0) {
+      setStatus({
+        type: "error",
+        mensagem: "Senha incorreta!",
+      });
+    } else {
+      usuarios.map((usu) => {
+        const id = usu.id;
+        if (permission === "STUDENT") {
+          navigate(`MenuStudent/${usu.id}`);
+        } else if (permission === "MENTOR") {
+          navigate(`MenuMentor/${usu.id}`);
+        } else if (permission === "ADMINISTRATOR") {
+          navigate("UserManagement");
+        }
+
+        sessionStorage.setItem("authenticated", "true");
+        setAuthenticated(true);
+      });
+    }
+  }
+
   async function validate() {
-    let schema = yup.object().shape({
+    const schema = yup.object().shape({
       password: yup
-        .string("Erro: Necessário preencher o campo senha")
+        .string()
         .required("Erro: Necessário preencher o campo senha")
-        .min(6, "Erro: A senha deve ter no minimo 6 caracteres "),
+        .min(6, "Erro: A senha deve ter no mínimo 6 caracteres"),
 
       email: yup
-        .string("Erro: Necessário preencher o campo email!")
+        .string()
         .required("Erro: Necessário preencher o campo email!")
-        .email("Erro: Necessário preencher o campo email valido!"),
+        .email("Erro: Necessário preencher um email válido!"),
     });
 
     try {
@@ -81,17 +122,6 @@ export default function LoginBox() {
         <div className="login-box">
           <h1>Faça Login</h1>
 
-          {status.type === "success" ? (
-            <p style={{ color: "green" }}>{status.mensagem}</p>
-          ) : (
-            ""
-          )}
-          {status.type === "error" ? (
-            <p style={{ color: "red" }}>{status.mensagem} </p>
-          ) : (
-            ""
-          )}
-
           <Inputs
             name="email"
             eventos={handleChange}
@@ -109,13 +139,20 @@ export default function LoginBox() {
           <p className="esqueciSenha">
             <Link to="/Recover">Esqueci minha senha</Link>
           </p>
-          <Link to="/MenuMentor">
-            <button className="button-fieldB">ENTRAR</button>
-          </Link>
 
-          <Link to="/MenuStudent">
-            <button className="button-fieldB">ENTRAR</button>
-          </Link>
+          <button
+            type="submit"
+            className="button-fieldB"
+            onClick={verifyPermission}>
+            ENTRAR
+          </button>
+
+          {status.type === "success" && (
+            <p style={{ color: "green" }}>{status.mensagem}</p>
+          )}
+          {status.type === "error" && (
+            <p style={{ color: "red" }}>{status.mensagem}</p>
+          )}
 
           <p className="registre">
             Não tem uma conta?

@@ -202,50 +202,17 @@ export default function RegisterCourseDiscipline(props) {
                         ""
                       )}
                       <form onSubmit={handleSubmitSubject}>
-                        <FormControl
-                          variant="filled"
-                          sx={{ m: 1, width: 300 }}
-                          style={{
-                            backgroundColor: "#e8e8eb",
-                            borderRadius: "7px",
-                            border: "2.5px solid #005caa",
-                            width: "80%",
-                            marginTop: "6px",
-                          }}>
-                          <InputLabel
-                            id="demo-multiple-checkbox-label"
-                            style={{
-                              color: "#005caa",
-                              fontSize: "11pt",
-                              display: "flex",
-                              alignItems: "center",
-                              marginTop: "-4px",
-                            }}>
-                            <MenuBookIcon /> &nbsp; Curso
-                          </InputLabel>
-                          <Select
-                            id="demo-multiple-checkbox"
-                            multiple
-                            name="coursesId"
-                            value={personName}
-                            input={<OutlinedInput label="Selecione" />}
-                            onChange={handleChangeSelect}
-                            renderValue={(selected) => selected.join(", ")}
-                            MenuProps={MenuProps}>
-                            {courseValue?.data &&
-                              courseValue?.data.map((option) => (
-                                <MenuItem
-                                  key={option.id}
-                                  value={option.id}
-                                  label={option.name}>
-                                  <Checkbox
-                                    checked={personName.indexOf(option.id) > -1}
-                                  />
-                                  <ListItemText primary={option.name} />
-                                </MenuItem>
-                              ))}
-                          </Select>
-                        </FormControl>
+                        <select
+                          className="courses"
+                          name="courseId"
+                          onChange={handleChangeSubject}>
+                          <option value={10}>Selecione um Curso</option>
+
+                          {courseValue?.data &&
+                            courseValue?.data.map((course) => (
+                              <option value={course.id}>{course.name}</option>
+                            ))}
+                        </select>
 
                         <Inputs
                           name="name"

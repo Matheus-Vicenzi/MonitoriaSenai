@@ -5,6 +5,7 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Modal } from "@mui/material";
+import CancelIcon from "@mui/icons-material/Cancel";
 import FormControl from "@mui/material/FormControl";
 
 export default function Modals(props) {
@@ -18,7 +19,7 @@ export default function Modals(props) {
         style={{
           backgroundColor: "white",
           color: "#005caa",
-          height: 500,
+          height: `${props.height}`,
           textAlign: "center",
           position: "absolute",
           borderRadius: "10%",
@@ -34,8 +35,10 @@ export default function Modals(props) {
         aria-describedby="modal-modal-description">
         <Box
           style={{
-            marginTop: "20%",
+            marginTop: "10%",
           }}>
+          <CancelIcon onClick={handleClose} className="buttonCancel" />
+
           <Typography
             id="modal-modal-title"
             variant="h5"

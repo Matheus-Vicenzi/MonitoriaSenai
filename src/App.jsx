@@ -14,6 +14,7 @@ import OpenTickets from "./components/OpenTickets/OpenTickets";
 import UserManagement from "./components/UserManagement/UserManagement";
 import ScheduleMentor from "./components/Schedule/ScheduleMentor";
 import Student from "./components/Student/Student";
+import LoginAutenticação from "./components/LoginBox/LoginAutenticação";
 function App() {
   return (
     <>
@@ -28,7 +29,15 @@ function App() {
               </>
             }
           />
-
+          <Route
+            exact
+            path="/LoginAutenticação"
+            element={
+              <>
+                <LoginAutenticação />
+              </>
+            }
+          />
           <Route
             exact
             path="/Register"
@@ -58,7 +67,7 @@ function App() {
           />
           <Route
             exact
-            path="/MenuStudent"
+            path="/MenuStudent/:id"
             element={
               <>
                 <MenuStudent />
@@ -67,7 +76,7 @@ function App() {
           />
           <Route
             exact
-            path="/OpenTickets"
+            path="/OpenTickets/:id"
             element={
               <>
                 <OpenTickets />
@@ -76,7 +85,7 @@ function App() {
           />
           <Route
             exact
-            path="/ViewTicketsStudent"
+            path="/ViewTicketsStudent/:id"
             element={
               <>
                 <ViewTicketsStudent />
@@ -85,7 +94,7 @@ function App() {
           />
           <Route
             exact
-            path="/Student"
+            path="/Student/:id"
             element={
               <>
                 <Student />
@@ -94,7 +103,7 @@ function App() {
           />
           <Route
             exact
-            path="/MenuMentor"
+            path="/MenuMentor/:id"
             element={
               <>
                 <MenuMentor />
@@ -121,7 +130,7 @@ function App() {
           />
           <Route
             exact
-            path="/ScheduleMentor"
+            path="/ScheduleMentor/:id"
             element={
               <>
                 <ScheduleMentor />

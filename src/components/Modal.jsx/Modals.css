@@ -17,3 +17,9 @@
   background-color: var(--main-color);
   border-radius: 10%;
 }
+
+.buttonCancel {
+  margin-left: 80%;
+  margin-top: -100%;
+  cursor: pointer;
+}

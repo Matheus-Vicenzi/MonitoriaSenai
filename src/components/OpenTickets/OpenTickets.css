@@ -17,7 +17,7 @@
   border-radius: 5px;
   margin-top: 0.5rem;
   letter-spacing: 1px;
-  width: 30rem;
+  width: 45rem;
   font-family: "Inter", sans-serif;
   cursor: pointer;
   padding: 15px;
@@ -26,9 +26,12 @@
   color: var(--white-color);
 }
 
-.selectOpenTickets {
+.openTickets {
   padding: 20px;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45rem;
   border-radius: 7px;
   border: 2.5px solid #005caa;
   background-color: #e8e8eb;

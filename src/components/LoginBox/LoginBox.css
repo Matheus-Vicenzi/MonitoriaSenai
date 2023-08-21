@@ -90,3 +90,18 @@ svg {
 .login-field input {
   color: var(--letter-color);
 }
+
+.button-fieldAutent {
+  font-size: 12pt;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  width: 30rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 12px;
+  background-color: var(--letter-color);
+  border: none;
+  color: var(--white-color);
+}
